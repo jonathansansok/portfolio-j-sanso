@@ -298,6 +298,10 @@ html {
   margin: auto;
 }
 
+.project{
+  background-color: black;
+}
+
 #projects .title-section {
   text-align: center;
   font-size: 22px;
