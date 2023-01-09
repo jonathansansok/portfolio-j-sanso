@@ -330,7 +330,7 @@ html {
 
 #projects .row .project:hover img {
   filter: grayscale(0.7);
-   filter: blur(2px); 
+  filter: blur(2px);
 }
 
 #projects .row .project .info {
@@ -457,8 +457,24 @@ footer a:hover {
 }
 
 /* RESPONSIVE SECTION */
-
+@media screen and (min-width: 800px) {
+  .socialRespon {
+    display: none;
+  }
+}
 @media screen and (max-width: 800px) {
+    .socialRespon {
+        align-self: end;
+      }
+    .fa-linkedin {
+        font-size: 20px;
+        margin-bottom: 5px;
+        margin-left: 10px; 
+    }
+    .fa-square-github{
+        font-size: 20px;
+        margin-left: 10px; 
+    }
   .social {
     display: none;
   }
