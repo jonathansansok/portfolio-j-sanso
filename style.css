@@ -470,13 +470,19 @@ footer a:hover {
         font-size: 20px;
         margin-bottom: 5px;
         margin-left: 10px; 
+        color: white;
     }
     .fa-square-github{
         font-size: 20px;
-        margin-left: 10px; 
+        margin-bottom: 5px;
+        margin-left: 10px;
+        color: white; 
     }
   .social {
     display: none;
+  }
+  .welcome{
+    margin-bottom: 0;
   }
   nav {
     display: none;
@@ -503,6 +509,7 @@ footer a:hover {
   #initial .content .introduction h2 {
     font-size: 40px;
   }
+  
   #about {
     padding: 50px 0;
     display: block;
@@ -552,5 +559,8 @@ footer a:hover {
   #contact .form-container .half input {
     width: 100%;
     margin-bottom: 15px;
+  }
+  .welcome{
+    margin-bottom: 0;
   }
 }
