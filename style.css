@@ -330,7 +330,7 @@ html {
 
 #projects .row .project:hover img {
   filter: grayscale(0.7);
-  /* filter: blur(2px); */
+   filter: blur(2px); 
 }
 
 #projects .row .project .info {
