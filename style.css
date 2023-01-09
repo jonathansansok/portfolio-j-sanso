@@ -300,6 +300,7 @@ html {
 
 .project{
   background-color: black;
+  border-radius: 4px ;
 }
 
 #projects .title-section {
