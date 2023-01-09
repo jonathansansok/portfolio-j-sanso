@@ -294,6 +294,7 @@ html {
 #projects {
   max-width: 1100px;
   padding: 100px 0;
+  padding-bottom: 10px;
   margin: auto;
 }
 
@@ -372,6 +373,7 @@ html {
 
 #contact {
   padding: 100px 15px;
+  padding-top: 60px;
 }
 
 #contact .title-section {
@@ -463,25 +465,31 @@ footer a:hover {
   }
 }
 @media screen and (max-width: 800px) {
-    .socialRespon {
-        align-self: end;
-      }
-    .fa-linkedin {
-        font-size: 20px;
-        margin-bottom: 5px;
-        margin-left: 10px; 
-        color: white;
-    }
-    .fa-square-github{
-        font-size: 20px;
-        margin-bottom: 5px;
-        margin-left: 10px;
-        color: white; 
-    }
+  .socialRespon {
+    align-self: end;
+  }
+  .fa-linkedin {
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    color: white;
+    margin-top: 7.5px;
+  }
+  .fa-square-github {
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    color: white;
+    margin-top: 7.5px;
+  }
+  .fa-bars {
+    font-size: 20px;
+    margin-top: 5px;
+  }
   .social {
     display: none;
   }
-  .welcome{
+  .welcome {
     margin-bottom: 0;
   }
   nav {
@@ -509,7 +517,7 @@ footer a:hover {
   #initial .content .introduction h2 {
     font-size: 40px;
   }
-  
+
   #about {
     padding: 50px 0;
     display: block;
@@ -560,7 +568,12 @@ footer a:hover {
     width: 100%;
     margin-bottom: 15px;
   }
-  .welcome{
-    margin-bottom: 0;
+  #initial .content .introduction .welcome {
+    margin-bottom: 00px;
+  }
+}
+@media screen and (max-width: 450px) {
+  #projects {
+    margin: 0px 4px 0px 4px;
   }
 }
