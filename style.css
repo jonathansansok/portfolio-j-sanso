@@ -40,7 +40,7 @@ html {
 
 #initial .content header .content-header h1 {
     text-align: center;
-    color: #ff5080;
+    color: rgb(33, 157, 214);
 }
 #initial .content header .content-header nav ul {
     list-style: none;
@@ -57,7 +57,7 @@ html {
 }
 
 #initial .content header .content-header nav ul li a:hover {
-    color: #ff5080;
+    color: rgb(33, 157, 214);
 }
 
 #initial .content header .content-header .social a {
@@ -69,11 +69,11 @@ html {
 }
 
 #initial .content header .content-header .social a:hover{
-    color: #ff5080;
+    color: rgb(33, 157, 214);
 }
 
 #initial .content header .content-header .selected {
-    color: #ff5080;
+    color: rgb(33, 157, 214);
 }
 
 #initial .content .introduction {
@@ -103,7 +103,7 @@ html {
 
 #initial .content .introduction h2 span {
     font-size: 50px;
-    color: #ff5080;
+    color: rgb(33, 157, 214);
 }
 
 #initial .content .introduction .description {
@@ -127,7 +127,7 @@ html {
 }
 
 #initial .content .introduction a:hover {
-    background-color: #ff5080;
+    background-color: rgb(33, 157, 214);
 }
 
 #nav-icon {
@@ -177,7 +177,7 @@ html {
 }
 
 #about .about h2 span {
-    color: #ff5080;
+    color: rgb(33, 157, 214);
 }
 
 #about .about h3 {
@@ -216,7 +216,7 @@ html {
 
 #about .about .download:hover,
 #about .about .contactMe:hover {
-    background-color: #ff5080;
+    background-color: rgb(33, 157, 214);
     color: #fff;
 }
 
@@ -339,7 +339,7 @@ html {
     position: absolute;
     left: 0;
     background-color: rgba(0, 0, 0, 0.95);
-    color: #ff5080;
+    color: rgb(33, 157, 214);
     width: 100%;
     padding: 10px;
     opacity: 0;
@@ -429,7 +429,7 @@ html {
 }
 
 #contact .send-btn:hover {
-    background-color: #ff5080;
+    background-color: rgb(33, 157, 214);
     color: #fff;
 }
 
@@ -456,7 +456,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #ff5080;
+    color: rgb(33, 157, 214);
 }
 
 /* RESPONSIVE SECTION */
