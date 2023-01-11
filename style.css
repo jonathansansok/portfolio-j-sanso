@@ -75,7 +75,16 @@ html {
 #initial .content header .content-header .selected {
   color: rgb(33, 157, 214);
 }
-
+/* QUITO SUBRAYADOS DE ENLACES */
+.quitoSubrayado{
+  text-decoration: none;
+  transition: 1s;
+}
+.quitoSubrayado:hover{
+  background-color: #25d366;
+  border-radius: 5px; 
+  padding: 0px 10px;
+}
 #initial .content .introduction {
   max-width: 1100px;
   height: 100vh;
