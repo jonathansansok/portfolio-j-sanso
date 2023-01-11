@@ -318,7 +318,7 @@ html {
   display: flex;
   justify-content: space-between;
   margin: 30px 0;
-  max-height: 1000px;
+  max-height: 1500px;
   flex-wrap: wrap;
 }
 
