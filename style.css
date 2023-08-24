@@ -327,8 +327,9 @@ html {
   display: flex;
   justify-content: space-between;
   margin: 30px 0;
-  max-height: 1500px;
+  max-height: 2400px;
   flex-wrap: wrap;
+
 }
 
 #projects .row .project {
