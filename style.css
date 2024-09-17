@@ -76,13 +76,13 @@ html {
   color: rgb(33, 157, 214);
 }
 /* QUITO SUBRAYADOS DE ENLACES */
-.quitoSubrayado{
+.quitoSubrayado {
   text-decoration: none;
   transition: 1s;
 }
-.quitoSubrayado:hover{
+.quitoSubrayado:hover {
   background-color: #25d366;
-  border-radius: 5px; 
+  border-radius: 5px;
   padding: 0px 10px;
 }
 #initial .content .introduction {
@@ -308,9 +308,9 @@ html {
   margin: auto;
 }
 
-.project{
+.project {
   background-color: black;
-  border-radius: 4px ;
+  border-radius: 4px;
 }
 
 #projects .title-section {
@@ -329,7 +329,6 @@ html {
   margin: 30px 0;
   max-height: 2400px;
   flex-wrap: wrap;
-
 }
 
 #projects .row .project {
@@ -388,8 +387,7 @@ html {
   bottom: 0;
 }
 /* mi spotify */
-.miSpotify{
-  
+.miSpotify {
   margin-top: 30px;
 }
 /* mi spotify */
@@ -577,7 +575,7 @@ footer a:hover {
   }
   #projects {
     padding: 50px 0;
-    }
+  }
   #projects .row {
     display: block;
   }
@@ -600,43 +598,43 @@ footer a:hover {
     margin-bottom: 00px;
   }
 }
-@media screen and (max-width: 940px) {
-  #projects{
-    min-height: 3400px;
-  }
-}
-@media screen and (max-width: 450px) {
-  #projects {
-    margin: 0px 4px 0px 4px;
-    min-height: 3125px;
-  }
-}
 
-@media screen and (max-width: 408px) {
-  #projects {
-    min-height: 3040px;
-    max-height: 3080px;
+@media screen and (max-width: 450px) {
+  .project{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
   }
+   img{
+    max-width: 90%;
+
+  } 
+/*   #projects {
+    min-height: 3150px;
+    max-height: 3170px;
+  } */
 }
 
 /* WHATS APP BOTON GENERAL */
 .whatsapp {
-  position:fixed;
-  width:60px;
-  height:60px;
-  bottom:40px;
-  right:40px;
-  background-color:#25d366;
-  color:#FFF;
-  border-radius:50px;
-  text-align:center;
-  font-size:30px;
-  z-index:100;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  z-index: 100;
   transition: 1s;
 }
 .whatsapp:hover {
   color: orange;
 }
 .whatsapp-icon {
-  margin-top:13px;
+  margin-top: 13px;
 }
