@@ -105,7 +105,7 @@ html {
 
 #initial .content .introduction h2 {
   font-size: 55px;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
@@ -116,7 +116,7 @@ html {
 
 #initial .content .introduction .description {
   max-width: 700px;
-  margin: 25px;
+  margin: 10px 25px 10px 25px;
   font-size: 18px;
   text-align: center;
 }
@@ -124,7 +124,7 @@ html {
 #initial .content .introduction a {
   text-decoration: none;
   display: inline-block;
-  margin: 25px;
+  margin: 5px 25px 25px 25px;
   padding: 20px 25px;
   border: 2px solid #fff;
   border-radius: 50px;
@@ -483,6 +483,7 @@ footer a:hover {
 }
 
 /* RESPONSIVE SECTION */
+
 @media screen and (min-width: 800px) {
   .socialRespon {
     display: none;
@@ -576,7 +577,7 @@ footer a:hover {
   }
   #projects {
     padding: 50px 0;
-  }
+    }
   #projects .row {
     display: block;
   }
@@ -599,11 +600,25 @@ footer a:hover {
     margin-bottom: 00px;
   }
 }
+@media screen and (max-width: 940px) {
+  #projects{
+    min-height: 3400px;
+  }
+}
 @media screen and (max-width: 450px) {
   #projects {
     margin: 0px 4px 0px 4px;
+    min-height: 3125px;
   }
 }
+
+@media screen and (max-width: 408px) {
+  #projects {
+    min-height: 3040px;
+    max-height: 3080px;
+  }
+}
+
 /* WHATS APP BOTON GENERAL */
 .whatsapp {
   position:fixed;
