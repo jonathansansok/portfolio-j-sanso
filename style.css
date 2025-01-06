@@ -567,6 +567,17 @@ footer a:hover {
   #skills {
     padding: 50px 15px;
   }
+  @media screen and (max-width: 800px) {
+    #skills .row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #skills .row .skill {
+      width: 100%;
+      max-width: 90%;
+    }
+  }
   #skills .row {
     display: grid;
   }
