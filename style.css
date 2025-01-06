@@ -623,6 +623,11 @@ footer a:hover {
     align-items: center;
 
   }
+  #projects .row .project p.compact-paragraph {
+    line-height: 0.9; /* Reduce el espacio entre líneas */
+    margin: 1px 0; /* Reduce el margen superior e inferior */
+    font-size: 11.5px; /* Ajusta el tamaño de la fuente si es necesario */
+  }
    img{
     max-width: 90%;
 
