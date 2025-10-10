@@ -480,159 +480,24 @@ footer a:hover {
   color: rgb(33, 157, 214);
 }
 
-/* RESPONSIVE SECTION */
 
-@media screen and (min-width: 800px) {
-  .socialRespon {
-    display: none;
-  }
-}
-@media screen and (max-width: 800px) {
-  .socialRespon {
-    align-self: end;
-  }
-  .fa-linkedin {
-    font-size: 20px;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    color: white;
-    margin-top: 7.5px;
-  }
-  .fa-square-github {
-    font-size: 20px;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    color: white;
-    margin-top: 7.5px;
-  }
-  .fa-bars {
-    font-size: 20px;
-    margin-top: 5px;
-  }
-  .social {
-    display: none;
-  }
-  .welcome {
-    margin-bottom: 0;
-  }
-  nav {
-    display: none;
-  }
-  nav.responsive {
-    display: block;
-    background-color: rgba(0, 0, 0, 0.8);
-    width: 100%;
-    position: absolute;
-    top: 48px;
-    left: 0;
-    padding: 10px 0;
-  }
-  nav.responsive ul {
-    display: block !important;
-    text-align: center;
-  }
-  nav.responsive ul li {
-    margin: 5px 0;
-  }
-  #nav-icon {
-    display: block;
-  }
-  #initial .content .introduction h2 {
-    font-size: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  #about {
-    padding: 50px 0;
-    display: block;
-  }
-  #about .photo-container {
-    max-width: 200px;
-    margin: auto;
-  }
-  #about .photo-container img {
-    padding: 8px;
-  }
-  #about .about .title-section {
-    text-align: center;
-  }
-  #about .about h2 {
-    font-size: 25px;
-    text-align: center;
-  }
-  #about .about h3 {
-    text-align: center;
-  }
-  #skills {
-    padding: 50px 15px;
-  }
-  @media screen and (max-width: 800px) {
-    #skills .row {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    #skills .row .skill {
-      width: 100%;
-      max-width: 90%;
-    }
-  }
-  #skills .row {
-    display: grid;
-  }
-  .skills .row .skill {
-    margin: 10px auto;
-  }
-  #projects {
-    padding: 50px 0;
-  }
-  #projects .row {
-    display: block;
-  }
-  #projects .row .project {
-    margin: 10px auto;
-  }
-  #contact {
-    padding: 50px 15px;
-  }
-  #contact .form-container .half {
-    margin-bottom: 15px;
-    display: block;
-  }
-  #contact .form-container .half input {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  #initial .content .introduction .welcome {
-    padding-top: 60px;
-    margin-bottom: 00px;
-  }
-  @media screen and (max-width: 800px) {
-    #projects .row .project {
-      height: auto;
-    }
-  }
-}
 
 @media screen and (max-width: 450px) {
-  .project{
+  .project {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
   }
   #projects .row .project p.compact-paragraph {
     line-height: 0.9; /* Reduce el espacio entre líneas */
     margin: 1px 0; /* Reduce el margen superior e inferior */
     font-size: 11.5px; /* Ajusta el tamaño de la fuente si es necesario */
   }
-   img{
+  img {
     max-width: 90%;
-
-  } 
-/*   #projects {
+  }
+  /*   #projects {
     min-height: 3150px;
     max-height: 3170px;
   } */
@@ -658,4 +523,54 @@ footer a:hover {
 }
 .whatsapp-icon {
   margin-top: 13px;
+}
+
+@media screen and (min-width: 800px) {
+  .socialRespon { display: none; }
+}
+
+@media screen and (max-width: 800px) {
+  .socialRespon { align-self: end; }
+  .fa-linkedin, .fa-square-github { font-size: 20px; margin: 7.5px 0 5px 10px; color: #fff; }
+  .fa-bars { font-size: 20px; margin-top: 5px; }
+  .social { display: none; }
+  nav { display: none; }
+  nav.responsive {
+    display: block; background-color: rgba(0,0,0,.8); width: 100%;
+    position: absolute; top: 48px; left: 0; padding: 10px 0;
+  }
+  nav.responsive ul { display: block !important; text-align: center; }
+  nav.responsive ul li { margin: 5px 0; }
+  #nav-icon { display: block; }
+
+  /* aqui: tipografía del hero en mobile */
+  #initial .content .introduction h2 { font-size: 30px; padding: 0 10px; }
+
+  /* aqui: ocultar saludo, nombre del H2 y el H1 del header en mobile */
+  #initial .content .introduction .welcome { display: none !important; }   /* //aqui: "Hi there!" */
+  #initial .content .introduction h2 > span { display: none !important; }  /* //aca tal: <span>Jonathan Sansó</span> */
+  header .content-header h1 { display: none !important; }                  /* //aqui: H1 fijo del header */
+
+  /* about */
+  #about { padding: 50px 0; display: block; }
+  #about .photo-container { max-width: 200px; margin: auto; }
+  #about .photo-container img { padding: 8px; }
+  #about .about .title-section { text-align: center; }
+  #about .about h2 { font-size: 25px; text-align: center; }
+  #about .about h3 { text-align: center; }
+
+  /* skills */
+  #skills { padding: 50px 15px; }
+  #skills .row { display: grid; }                 /* //aqui: grid en mobile */
+  #skills .row .skill { width: 100%; max-width: 90%; margin: 10px auto; }
+
+  /* projects */
+  #projects { padding: 50px 0; }
+  #projects .row { display: block; }
+  #projects .row .project { margin: 10px auto; height: auto; }
+
+  /* contact */
+  #contact { padding: 50px 15px; }
+  #contact .form-container .half { margin-bottom: 15px; display: block; }
+  #contact .form-container .half input { width: 100%; margin-bottom: 15px; }
 }

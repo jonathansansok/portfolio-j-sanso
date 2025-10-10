@@ -1,23 +1,22 @@
-//Nav selected function
+//aqui: Nav selected function accesible y sin hardcodeos
 function selected(link) {
-  let options = document.querySelectorAll("#links a");
-  options[0].className = "";
-  options[1].className = "";
-  options[2].className = "";
-  options[3].className = "";
-  options[4].className = "";
-  link.className = "selected";
+  const options = document.querySelectorAll('#links a'); //aqui: toma todos los <a>
+  options.forEach(a => a.classList.remove('selected')); //aqui: limpia la clase activa
+  link.classList.add('selected'); //aqui: marca el link activo
 
-  let x = document.getElementById("nav");
-  x.className = "";
+  //aqui: actualiza aria-current para lectores de pantalla
+  options.forEach(a => a.removeAttribute('aria-current'));
+  link.setAttribute('aria-current', 'page');
+
+  //aqui: cierra el menú responsive al elegir una opción
+  const nav = document.getElementById('nav');
+  nav.classList.remove('responsive');
 }
 
-//Shows the responsive menu
+//aqui: menú responsive con control ARIA
 function responsiveMenu() {
-  let x = document.getElementById("nav");
-  if (x.className === "") {
-    x.className = "responsive";
-  } else {
-    x.className = "";
-  }
+  const nav = document.getElementById('nav');
+  const btn = document.getElementById('nav-icon');
+  const isOpen = nav.classList.toggle('responsive'); //aqui: alterna la clase
+  if (btn) btn.setAttribute('aria-expanded', String(isOpen)); //aqui: sincroniza ARIA
 }

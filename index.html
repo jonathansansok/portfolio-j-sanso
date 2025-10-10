@@ -15,26 +15,40 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./style.css" />
-    <title>
-      Jonathan Sansó | Higher techinician in programming • Front-end React •
-      Back-end Node
-    </title>
+    <title>Jonathan Sansó | React/Next.js, Typescript, Tailwind, Nest, Prisma, MySQL, Docker</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jonathan Sansó",
+        "jobTitle": "Full-stack Developer",
+        "url": "https://portfolio-sanso-jonathan.netlify.app/",
+        "image": "https://tu-dominio.com/assets/jonathan-sanso-full-stack.jpg",
+        "sameAs": [
+          "https://www.linkedin.com/in/jonathan-sanso-fullstack/",
+          "https://github.com/jonathansansok"
+        ],
+        "knowsAbout": ["React","Next.js","TypeScript","Tailwind","NestJS","Prisma","MySQL"]
+      }
+      </script>
     <link rel="icon" type="image/x-icon" href="assets/code-solid.svg" />
-    <link
+ <!--    <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    /> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
   </head>
   <body>
     <!-- WHATS APP BOTTON -->
     <a
-      href="https://wa.me/5491169123268?text=Me%20gustaría%20saber%20sobre%20tus%20servicios%20"
-      class="whatsapp"
-      target="_blank"
-    >
-      <i class="fa fa-whatsapp whatsapp-icon"></i
-    ></a>
+    href="https://wa.me/5491169123268?text=Me%20gustaría%20saber%20sobre%20tus%20servicios%20"
+    class="whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Abrir chat de WhatsApp"
+  >
+    <i class="fa fa-whatsapp whatsapp-icon" aria-hidden="true"></i>
+  </a>
     <!-- WHATS APP BOTTON -->
     <!-- INITIAL SECTION -->
     <section id="initial">
@@ -48,11 +62,11 @@
                 target="_blank"
                 ><i class="fa-brands fa-linkedin"></i
               ></a>
-              <a href="https://github.com/jonathansansok" target="_blank"
+              <a href="https://github.com/jonathansansok" target="_blank" rel="noopener noreferrer"
                 ><i class="fa-brands fa-square-github"></i
               ></a>
             </div>
-            <nav id="nav" class="">
+            <nav id="nav" aria-label="Primary">
               <ul id="links">
                 <li>
                   <a href="#initial" class="selected" onclick="selected(this)"
@@ -72,10 +86,11 @@
               </ul>
             </nav>
 
-            <!-- RESPONSIVE MENU ICONS -->
-            <div id="nav-icon" onclick="responsiveMenu()">
-              <i class="fa-solid fa-bars"></i>
-            </div>
+            <div id="nav-icon" role="button" tabindex="0"
+            aria-controls="links" aria-expanded="false"
+            onclick="responsiveMenu()">
+         <i class="fa-solid fa-bars" aria-hidden="true"></i>
+       </div>
 
             <!-- SOCIAL MEDIA ICONS -->
             <div class="social">
@@ -84,7 +99,7 @@
                 target="_blank"
                 ><i class="fa-brands fa-linkedin"></i
               ></a>
-              <a href="https://github.com/jonathansansok" target="_blank"
+              <a href="https://github.com/jonathansansok" target="_blank" rel="noopener noreferrer"
                 ><i class="fa-brands fa-square-github"></i
               ></a>
             </div>
@@ -294,10 +309,8 @@
       <div class="row">
         <div class="project">
           <div class="overlay"></div>
-          <img
-            src="./assets/v3.jpg"
-            alt="Proyecto: fondo-chat-back-end!"
-          />
+          <img src="./assets/v3.jpg" alt="Platform for complex events V2"
+     width="800" height="450" loading="lazy" decoding="async">
           <div class="info">
             <h4> [Confidential] V.2: Platform for complex events.</h4>
             <p class="compact-paragraph">
@@ -708,7 +721,7 @@
           target="_blank"
           ><i class="fa-brands fa-linkedin"></i
         ></a>
-        <a href="https://github.com/jonathansansok" target="_blank"
+        <a href="https://github.com/jonathansansok" target="_blank" rel="noopener noreferrer"
           ><i class="fa-brands fa-square-github"></i
         ></a>
       </div>
