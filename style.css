@@ -621,3 +621,15 @@ footer a:hover {
   .fa-bars { font-size: 20px; }
   .socialRespon a i { font-size: 20px; }
 }
+/* Botón hero con ícono (hereda estilo del anchor del hero) */
+#initial .content .introduction a.btn-icon{
+  display:inline-flex; 
+  align-items:center; 
+  gap:8px;
+}
+
+/* Opcional: igualar tamaño del icono al texto y evitar salto */
+#initial .content .introduction a.btn-icon i{
+  line-height:1;
+  font-size:1em;
+}
