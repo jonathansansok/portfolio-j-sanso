@@ -633,3 +633,10 @@ footer a:hover {
   line-height:1;
   font-size:1em;
 }
+/* separador visible por defecto */
+.sep { display: inline; }
+
+/* ocultar solo en móvil vertical */
+@media (max-width: 800px) and (orientation: portrait) {
+  .sep { display: none !important; }
+}
