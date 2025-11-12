@@ -536,10 +536,10 @@ footer a:hover {
 }
 
 .whatsapp:hover {
-  color: orange;
+  color: #0e5a2a;
 }
 .whatsapp-icon {
-  margin-top: 13px;
+  margin-top: 14px;
 }
 
 @media screen and (min-width: 800px) {
