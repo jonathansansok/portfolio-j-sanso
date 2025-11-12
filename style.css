@@ -937,3 +937,16 @@ body.modal-open{ overflow:hidden; }
   .info.expanded::after,
   .project:has(.info.expanded)::after{ opacity:0; }
 }
+@media (min-width: 801px){
+  .info .toggle-more{
+    display: block;
+    width: fit-content;     /* no ocupa todo el ancho */
+    margin: 14px 0 14px auto; /* más espacio arriba/abajo y pegado a la derecha */
+  }
+}
+
+
+
+
+
+
