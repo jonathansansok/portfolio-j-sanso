@@ -946,11 +946,10 @@ body.modal-open{ overflow:hidden; }
 }
 @media (max-width: 480px) and (orientation: portrait) {
   #initial .content .introduction {
-    transform: scale(0.75);
+    transform: translateY(18px) scale(0.85);
     transform-origin: top center;
   }
 }
-
 
 
 
