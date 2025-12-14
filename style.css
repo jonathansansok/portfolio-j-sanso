@@ -944,7 +944,12 @@ body.modal-open{ overflow:hidden; }
     margin: 14px 0 14px auto; /* más espacio arriba/abajo y pegado a la derecha */
   }
 }
-
+@media (max-width: 480px) and (orientation: portrait) {
+  #initial .content .introduction {
+    transform: scale(0.75);
+    transform-origin: top center;
+  }
+}
 
 
 
