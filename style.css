@@ -18,7 +18,8 @@ html {
     url("./assets/background.jpg");
   background-size: cover;
   background-position: center center;
-  height: 100vh;
+  min-height: 100svh; /* mobile moderno */
+  height: 100dvh;     /* fallback */
 }
 
 #initial .content header {
@@ -87,40 +88,65 @@ html {
 }
 #initial .content .introduction {
   max-width: 1100px;
-  height: 100vh;
+  width: 100%;
+  min-height: 100svh;
   margin: auto;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  /* clave: más ancho útil + compensar header fijo */
+  padding: 90px 16px 40px;
+  gap: 14px;
 }
 
+
+
 #initial .content .introduction .welcome {
-  font-size: 16px;
-  margin-bottom: 20px;
+  font-size: 14px;
+  margin-bottom: 0;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
+  opacity: 0.9;
 }
 
 #initial .content .introduction h2 {
-  font-size: 55px;
-  margin-bottom: 10px;
+  margin: 0;
   text-align: center;
+  line-height: 1.06;
+
+  /* tipografía fluida */
+  font-size: clamp(26px, 4.4vw, 48px);
+
+  /* evita cortes feos */
+  max-width: 980px;
+  text-wrap: balance;
 }
+
 
 #initial .content .introduction h2 span {
-  font-size: 50px;
   color: rgb(33, 157, 214);
+  font-size: clamp(28px, 4.8vw, 52px);
 }
-
 #initial .content .introduction .description {
-  max-width: 700px;
-  margin: 10px 25px 10px 25px;
-  font-size: 18px;
-  text-align: center;
-}
+  max-width: 980px;
+  width: 100%;
+  margin: 0;
 
+  font-size: clamp(14px, 1.7vw, 18px);
+  line-height: 1.55;
+
+  /* si querés “usar más ancho”, esto ayuda más que centrar */
+  text-align: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+#initial .content .introduction > a {
+  /* por si quedó algún anchor suelto */
+  margin: 0;
+}
 #initial .content .introduction a {
   text-decoration: none;
   display: inline-block;
@@ -737,47 +763,78 @@ footer a:hover {
 }
 
 /* CTA hero */
-.cta-wrap{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  justify-content:center;
-  margin-top: 12px;
+.cta-wrap {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 980px;
+  margin-top: 8px;
+}
+#initial .content .introduction .cta-wrap a {
+  margin: 0;                 /* mata el margen gigante anterior */
+  text-transform: none;      /* más limpio */
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 14px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  line-height: 1;
+  text-decoration: none;
+
+  /* 2 columnas: cada botón ocupa aprox la mitad */
+  flex: 1 1 240px;
+  min-width: 220px;
 }
 
-/* Botón base */
-.btn-primary{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding:14px 22px;
-  border-radius:999px;
-  font-weight:800;
-  letter-spacing:.3px;
-  line-height:1;
-  text-decoration:none;
-}
-
-/* Hero: btn-primary sin borde */
-#initial .content .introduction a.btn-primary{
-  border: none !important;
+/* gradiente */
+.btn-gradient {
   color: #fff !important;
-  text-transform: none;
-}
-
-/* Botón gradiente base */
-.btn-gradient{
-  background-image: linear-gradient(135deg, rgb(33,157,214) 0%, #00e0ff 100%);
-  box-shadow: 0 10px 24px rgba(33,157,214,.32);
-  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  border: 0 !important;
+  background-image: linear-gradient(135deg, rgb(33, 157, 214) 0%, #00e0ff 100%);
+  box-shadow: 0 10px 24px rgba(33, 157, 214, 0.32);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
 }
 .btn-gradient:hover,
-.btn-gradient:focus-visible{
+.btn-gradient:focus-visible {
   transform: translateY(-1px);
-  box-shadow: 0 14px 28px rgba(33,157,214,.38);
+  box-shadow: 0 14px 28px rgba(33, 157, 214, 0.38);
   filter: brightness(1.03);
   outline: none;
+}
+
+/* outline */
+.btn-outline {
+  color: #fff !important;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  color: #fff !important;
+  border-color: transparent;
+  background-image: linear-gradient(135deg, rgb(33, 157, 214) 0%, #00e0ff 100%);
+  box-shadow: 0 14px 28px rgba(33, 157, 214, 0.38);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* mobile fino: si no entra, baja a 1 por fila */
+@media (max-width: 420px) {
+  .btn-primary {
+    flex: 1 1 100%;
+    min-width: 0;
+    width: 100%;
+  }
 }
 
 /* Botones mobile */
