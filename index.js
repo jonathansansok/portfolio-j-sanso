@@ -136,3 +136,15 @@ document.addEventListener('keydown', (e) => {
     else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
   }
 });
+
+document.querySelectorAll("#projects .project").forEach((card) => {
+  let t = null;
+
+  const show = () => {
+    card.classList.add("show-hint");
+    clearTimeout(t);
+    t = setTimeout(() => card.classList.remove("show-hint"), 900);
+  };
+
+  card.addEventListener("touchstart", show, { passive: true });
+});

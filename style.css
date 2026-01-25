@@ -1011,8 +1011,11 @@ footer a:hover { color: var(--brand); }
   #skills .row { display: grid; }
   #skills .row .skill { width: 100%; max-width: 90%; margin: 10px auto; }
 
-  /* Projects */
-  #projects { padding: 50px 0; }
+/* Projects */
+#projects {
+  padding: 50px 0 110px;
+}
+
   #projects .row { display: block; }
   #projects .row .project { margin: 10px auto; height: auto; }
   #projects .row .project:hover img { filter: none; }
@@ -1048,23 +1051,30 @@ footer a:hover { color: var(--brand); }
   #contact .form-container .half { margin-bottom: 15px; display: block; }
   #contact .form-container .half input { width: 100%; margin-bottom: 15px; }
 
-  /* Hint táctil */
-  .project::after {
-    content: "Tap to read";
-    position: absolute;
-    left: 50%;
-    bottom: 8px;
-    transform: translateX(-50%);
-    padding: 6px 10px;
-    font-size: 12px;
-    font-weight: 700;
-    color: #0b1220;
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: var(--radius-pill);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-    pointer-events: none;
-  }
+.project::after {
+  content: "Tap to read";
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%) translateY(6px);
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #0b1220;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.20);
+  pointer-events: none;
+
+  opacity: 0;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.project.show-hint::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
 
   .info.expanded ~ .overlay,
   .info.expanded::after,
@@ -1103,6 +1113,13 @@ footer a:hover { color: var(--brand); }
 
   .proj-modal__media { max-height: 36vh; }
   .proj-modal__content { max-height: 54vh; }
+  #initial .content .introduction {
+  padding-bottom: 70px;
+}
+
+.cta-wrap {
+  margin-bottom: 18px;
+}
 }
 
 body.modal-open { overflow: hidden; }
@@ -1121,4 +1138,22 @@ body.modal-open { overflow: hidden; }
     border-radius: var(--radius-pill);
     font-weight: 700;
   }
+  .whatsapp {
+  width: 52px;
+  height: 52px;
+  bottom: 18px;
+  right: 18px;
+  font-size: 26px;
+}
+
+.whatsapp-icon {
+  margin-top: 12px;
+}
+#initial .content .introduction {
+  padding-bottom: 70px;
+}
+
+.cta-wrap {
+  margin-bottom: 18px;
+}
 }
