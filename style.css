@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap");
 
-/* =========================================================
+/* =
    TOKENS / BASE
-   ========================================================= */
+   = */
 :root {
   --font: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 
@@ -47,9 +47,9 @@ html { scroll-behavior: smooth; }
 .container { max-width: var(--container); margin: 0 auto; }
 .no-decoration { text-decoration: none; }
 
-/* =========================================================
+/* =
    TITLES (evita repetir title-section en cada sección)
-   ========================================================= */
+   = */
 .title-section {
   text-align: center;
   text-transform: uppercase;
@@ -64,9 +64,9 @@ html { scroll-behavior: smooth; }
 #projects .title-section,
 #contact .title-section { font-size: 30px; }
 
-/* =========================================================
+/* =
    BUTTON SYSTEM (base + variantes)
-   ========================================================= */
+   = */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -146,9 +146,9 @@ html { scroll-behavior: smooth; }
 /* Botón con ícono */
 .btn--icon i { line-height: 1; font-size: 1em; }
 
-/* =========================================================
+/* =
    INITIAL / HERO
-   ========================================================= */
+   = */
 #initial {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("./assets/background.jpg");
@@ -287,9 +287,9 @@ html { scroll-behavior: smooth; }
 #initial .content .introduction a.btn-gradient { /* usa el token */ }
 #initial .content .introduction a.btn-outline  { /* usa el token */ }
 
-/* =========================================================
+/* =
    ABOUT
-   ========================================================= */
+   = */
 #about {
   max-width: var(--container);
   margin: 0 auto;
@@ -421,9 +421,9 @@ html { scroll-behavior: smooth; }
 #about .about .download:hover,
 #about .about .contactMe:hover { background-color: var(--brand); color: var(--white); }
 
-/* =========================================================
+/* =
    SKILLS
-   ========================================================= */
+   = */
 #skills {
   padding: 100px 15px;
   text-align: center;
@@ -473,9 +473,9 @@ html { scroll-behavior: smooth; }
 
 #skills .row .skill p { font-size: 14px; line-height: 22px; }
 
-/* =========================================================
+/* =
    PROJECTS
-   ========================================================= */
+   = */
 #projects {
   max-width: var(--container);
   margin: 0 auto;
@@ -503,35 +503,86 @@ html { scroll-behavior: smooth; }
   overflow: hidden;
 }
 
+
+
+#projects .row .project:hover img { filter: grayscale(0.7) blur(2px); }
+
+
+
+#projects .row .project {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
 #projects .row .project img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
   transition: var(--t-med);
 }
 
-#projects .row .project:hover img { filter: grayscale(0.7) blur(2px); }
-
 #projects .row .project .info {
   position: absolute;
-  left: 0;
-  bottom: -40px;
-  width: 100%;
-  padding: 10px;
+  inset: 0;
+  padding: 16px 16px 14px;
+  backdrop-filter: blur(1.5px);
 
-  background-color: var(--bg-dark-95);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+
   color: var(--brand);
 
-  opacity: 0;
-  transition: var(--t-med);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.10) 0%,
+    rgba(0, 0, 0, 0.72) 35%,
+    rgba(0, 0, 0, 0.98) 100%
+  );
+
+  transform: translateY(100%);
+  opacity: 1;
+  transition: transform 0.28s ease;
 }
 
-#projects .row .project:hover .info { opacity: 1; bottom: 0; }
+#projects .row .project:hover .info {
+  transform: translateY(0);
+  overflow: auto;
+}
+#projects .row .project:hover .clamp {
+  --clamp: 25;
+}
+
+#projects .row .project:hover img {
+  filter: grayscale(0.7) blur(2px);
+}
+#projects .row .project:hover .info {
+  transform: translateY(0);
+  overflow: auto;
+}
+
+#projects .row .project .info {
+  overflow: hidden;
+}
+
 
 #projects .row .project .info h4 { font-size: 20px; }
-#projects .row .project .info p { font-size: 12px; }
+
+#projects .row .project .info p {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+#projects .row .project .info h4,
+#projects .row .project .info p {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
+}
 
 #projects .row .project .info .links {
+    margin-top: auto;
   display: flex;
   justify-content: space-around;
   font-weight: bold;
@@ -557,14 +608,13 @@ html { scroll-behavior: smooth; }
 
 /* Compact paragraph helper */
 #projects .row .project p.compact-paragraph {
-  line-height: 0.9;
-  margin: 1px 0;
-  font-size: 11.5px;
+  line-height: 1.25;
+  margin: 0;
+  font-size: 12px;
 }
-
-/* =========================================================
+/* =
    CONTACT
-   ========================================================= */
+   = */
 #contact { padding: 60px 15px 100px; }
 
 #contact .title-section { margin-bottom: 20px; }
@@ -603,9 +653,9 @@ html { scroll-behavior: smooth; }
 
 #contact .send-btn:hover { background-color: var(--brand); color: var(--white); }
 
-/* =========================================================
+/* =
    FOOTER
-   ========================================================= */
+   = */
 footer {
   background-color: var(--bg-dark);
   color: var(--white);
@@ -626,9 +676,9 @@ footer a {
 
 footer a:hover { color: var(--brand); }
 
-/* =========================================================
+/* =
    WHATSAPP
-   ========================================================= */
+   = */
 .whatsapp {
   position: fixed;
   width: 60px;
@@ -647,18 +697,41 @@ footer a:hover { color: var(--brand); }
 .whatsapp:hover { color: #0e5a2a; }
 .whatsapp-icon { margin-top: 14px; }
 
-/* =========================================================
+/* =
    SEPARADOR (sep)
-   ========================================================= */
+   = */
 .sep { display: inline; }
 @media (max-width: 800px) and (orientation: portrait) {
   .sep { display: none !important; }
 }
+.clamp {
+  --clamp: 20;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 1.6em;
+}
 
-/* =========================================================
-   CLAMP + TOGGLE
-   ========================================================= */
-.clamp { --clamp: 5; overflow: hidden; }
+.clamp::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.6em;
+  pointer-events: none;
+
+}
+
+/* cuando está expandido, no queremos recorte ni fade */
+.info.expanded .clamp {
+  overflow: visible;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+}
+.info.expanded .clamp::after {
+  display: none;
+}
+
 
 @supports (line-clamp: 3) {
   .clamp { display: box; box-orient: vertical; line-clamp: var(--clamp); }
@@ -668,6 +741,11 @@ footer a:hover { color: var(--brand); }
 }
 
 .toggle-more {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -685,7 +763,9 @@ footer a:hover { color: var(--brand); }
   transition: transform var(--t-fast), box-shadow var(--t-fast), background-color var(--t-fast),
     color var(--t-fast), border-color var(--t-fast);
 }
-
+#projects .row .project .info h4 {
+  padding-right: 90px;
+}
 .toggle-more:hover,
 .toggle-more:focus-visible {
   transform: translateY(-1px);
@@ -696,17 +776,10 @@ footer a:hover { color: var(--brand); }
   outline: none;
 }
 
-@media (min-width: 801px) {
-  .info .toggle-more {
-    display: block;
-    width: fit-content;
-    margin: 14px 0 14px auto;
-  }
-}
 
-/* =========================================================
+/* =
    MODAL PROJECTS
-   ========================================================= */
+   = */
 .proj-modal {
   position: fixed;
   inset: 0;
@@ -810,9 +883,9 @@ footer a:hover { color: var(--brand); }
   text-align: center;
 }
 
-/* =========================================================
+/* =
    RESPONSIVE (consolidado: 800 / 900 / 480 / 420 / 450)
-   ========================================================= */
+   = */
 @media screen and (min-width: 800px) {
   .socialRespon { display: none; }
 }
@@ -919,7 +992,14 @@ footer a:hover { color: var(--brand); }
     pointer-events: none;
   }
 
-  .toggle-more { display: none; }
+.toggle-more {
+  display: inline-flex;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+}
+
 
   /* Contact */
   #contact { padding: 50px 15px; }
