@@ -1156,4 +1156,7 @@ body.modal-open { overflow: hidden; }
 .cta-wrap {
   margin-bottom: 18px;
 }
+#about {
+  padding-top: 70px;
+}
 }
