@@ -527,7 +527,8 @@ html { scroll-behavior: smooth; }
   position: absolute;
   inset: 0;
   padding: 16px 16px 14px;
-  backdrop-filter: blur(1.5px);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
 
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -537,9 +538,9 @@ html { scroll-behavior: smooth; }
 
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.10) 0%,
-    rgba(0, 0, 0, 0.72) 35%,
-    rgba(0, 0, 0, 0.98) 100%
+    rgba(0, 0, 0, 0.30) 0%,
+    rgba(0, 0, 0, 0.65) 30%,
+    rgba(0, 0, 0, 0.85) 100%
   );
 
   transform: translateY(100%);
@@ -560,7 +561,7 @@ html { scroll-behavior: smooth; }
   display: none;
 }
 #projects .row .project:hover img {
-  filter: grayscale(0.7) blur(2px);
+  filter: grayscale(0.5) blur(4px) brightness(0.7);
 }
 #projects .row .project:hover .info {
   transform: translateY(0);
