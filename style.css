@@ -1,6 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap");
 
 /* =
+   SCROLLBAR GLOBAL
+   = */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: var(--brand); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand2); }
+html { scrollbar-color: var(--brand) #000; scrollbar-width: thin; }
+
+/* =
    TOKENS / BASE
    = */
 :root {
@@ -489,27 +498,27 @@ a.icon-item:hover .icon-label {
 #projects {
   max-width: var(--container);
   margin: 0 auto;
-  padding: 80px 0 10px;
+  padding: 80px 20px 10px;
 }
 
 #projects .row {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   margin: 30px 0;
-  max-height: 2400px;
-  flex-wrap: wrap;
 }
 
 .project {
   background-color: var(--bg-dark);
-  border-radius: 4px;
+  border-radius: 16px;
   position: relative;
 }
 
 #projects .row .project {
-  max-width: 450px;
-  border: 1px solid #000;
-  margin: 20px 10px 0;
+  width: 100%;
+  border: none;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  margin: 0;
   overflow: hidden;
 }
 
@@ -523,9 +532,12 @@ a.icon-item:hover .icon-label {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 9;
+  min-height: 0;
 }
 
 #projects .row .project img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   display: block;
@@ -584,7 +596,7 @@ a.icon-item:hover .icon-label {
 }
 
 
-#projects .row .project .info h4 { font-size: 20px; }
+#projects .row .project .info h4 { font-size: clamp(14px, 1.6vw, 20px); }
 
 #projects .row .project .info p {
   min-height: 0;
@@ -634,7 +646,7 @@ a.icon-item:hover .icon-label {
 #projects .row .project p.compact-paragraph {
   line-height: 1.25;
   margin: 0;
-  font-size: 12px;
+  font-size: clamp(10px, 1.1vw, 13px);
 }
 /* =
    CONTACT
@@ -1023,11 +1035,11 @@ footer a:hover { color: var(--brand); }
 
 /* Projects */
 #projects {
-  padding: 50px 0 110px;
+  padding: 50px 16px 110px;
 }
 
-  #projects .row { display: block; }
-  #projects .row .project { margin: 10px auto; height: auto; }
+  #projects .row { grid-template-columns: 1fr; }
+  #projects .row .project { margin: 0 auto; height: auto; max-width: 450px; }
   #projects .row .project:hover img { filter: none; }
   #projects .row .project img { filter: none !important; }
 
@@ -1100,16 +1112,6 @@ footer a:hover { color: var(--brand); }
   }
 }
 
-/* 450: imagenes y layout project */
-@media screen and (max-width: 450px) {
-  .project {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  img { max-width: 90%; }
-}
 
 /* 480 portrait: ajuste de hero */
 @media (max-width: 480px) and (orientation: portrait) {
