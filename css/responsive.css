@@ -1,0 +1,243 @@
+/* =
+   RESPONSIVE (consolidado: 800 / 900 / 480 / 420 / 450)
+   = */
+@media screen and (min-width: 800px) {
+  .socialRespon { display: none; }
+}
+
+@media screen and (max-width: 900px) {
+  .proj-modal__dialog {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 14px;
+    width: min(760px, 96vw);
+    padding: 14px;
+  }
+  .proj-modal__media { max-height: 40vh; overflow: hidden; }
+  .proj-modal__content { max-height: 50vh; }
+}
+
+@media screen and (max-width: 800px) {
+  /* Header layout */
+  #initial .content header .content-header {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+
+  header .content-header h1 {
+    display: block !important;
+    order: 2;
+    font-size: clamp(16px, 4.2vw, 19px);
+    line-height: 1.1;
+    margin: 0;
+    justify-self: stretch;
+    text-align: center;
+    padding-left: clamp(8px, 2.4vw, 16px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform: translateY(1px);
+  }
+
+  #nav-icon { order: 1; display: block; }
+  .socialRespon { order: 3; align-self: end; }
+  .social { display: none; }
+  nav { display: none; }
+
+  .fa-linkedin, .fa-square-github { font-size: 20px; margin: 7.5px 0 5px 10px; color: var(--white); }
+  .fa-bars { font-size: 20px; margin-top: 5px; }
+  .socialRespon a i { font-size: 20px; }
+
+  nav.responsive {
+    display: block;
+    background-color: rgba(10, 10, 15, 0.9);
+    width: 100%;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    padding: 10px 0;
+  }
+
+  nav.responsive ul { display: block !important; text-align: center; }
+  nav.responsive ul li { margin: 5px 0; }
+
+  /* Hero ajustes */
+  #initial .content .introduction h2 { font-size: 16px; padding: 0 10px; }
+  #initial .content .introduction h2 > span { font-size: 30px; }
+  #initial .content .introduction h2 > span.sep { display: none !important; }
+  #initial .content .introduction .welcome { display: none !important; }
+
+  /* About */
+  #about { padding: 50px 0; display: block; }
+  #about .photo-container { max-width: 220px; margin: 0 auto 16px; }
+  #about .photo-container img { padding: 8px; }
+  #about .about .title-section,
+  #about .about h2,
+  #about .about h3,
+  .about .tech-list { text-align: center; }
+  .modern-links { justify-content: center; }
+
+  /* Skills */
+  #skills { padding: 50px 20px; }
+  #skills .icons-grid { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
+
+  /* Projects */
+  #projects {
+    padding: 50px 16px 110px;
+  }
+
+  #projects .row { grid-template-columns: 1fr; }
+  #projects .row .project {
+    margin: 0 auto;
+    height: auto;
+    max-width: 450px;
+  }
+  #projects .row .project:hover img { filter: none; }
+  #projects .row .project img { filter: none !important; }
+
+  /* info/overlay tap behavior */
+  #projects .row .project .info {
+    opacity: 0;
+    bottom: -40px;
+    pointer-events: none;
+    transition: opacity 0.25s ease, bottom 0.25s ease;
+  }
+
+  #projects .row .project .overlay {
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 60px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 100%);
+    pointer-events: none;
+  }
+
+  .toggle-more {
+    display: inline-flex;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+  }
+
+  /* Contact */
+  #contact { padding: 50px 15px; }
+  #contact .form-container .half { margin-bottom: 15px; display: block; }
+  #contact .form-container .half input { width: 100%; margin-bottom: 15px; }
+
+  .project::after {
+    content: "Tap to read";
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%) translateY(6px);
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #0b1220;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    border-radius: var(--radius-pill);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.20);
+    pointer-events: none;
+
+    opacity: 0;
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+
+  .project.show-hint::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .info.expanded ~ .overlay,
+  .info.expanded::after,
+  .project:has(.info.expanded)::after { opacity: 0; }
+
+  .sep { display: none !important; }
+}
+
+/* mobile fino: botones a 1 por fila */
+@media (max-width: 420px) {
+  #initial .content .introduction a.btn-primary {
+    flex: 1 1 100%;
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* 480 portrait: ajuste de hero */
+@media (max-width: 480px) and (orientation: portrait) {
+  #initial .content .introduction {
+    transform: translateY(18px) scale(0.85);
+    transform-origin: top center;
+  }
+  .margintop { margin-top: 120px; }
+
+  .proj-modal__dialog { border-radius: var(--radius-md); padding: 12px; }
+  .proj-modal__close {
+    top: 6px;
+    right: 6px;
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  .proj-modal__media { max-height: 36vh; }
+  .proj-modal__content { max-height: 54vh; }
+  #initial .content .introduction {
+    padding-bottom: 70px;
+  }
+
+  .cta-wrap {
+    margin-bottom: 18px;
+  }
+}
+
+body.modal-open { overflow: hidden; }
+
+/* Mobile vertical: clamp + toggle (si lo usás con .expanded) */
+@media (max-width: 800px) and (orientation: portrait) {
+  .clamp { --clamp: 5; }
+  .info.expanded .clamp { line-clamp: unset; -webkit-line-clamp: unset; }
+
+  .toggle-more {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #0fce1f;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    font-weight: 700;
+  }
+  .whatsapp {
+    width: 52px;
+    height: 52px;
+    bottom: 18px;
+    right: 18px;
+    font-size: 26px;
+  }
+
+  .whatsapp-icon {
+    margin-top: 12px;
+  }
+  #initial .content .introduction {
+    padding-bottom: 70px;
+  }
+
+  .cta-wrap {
+    margin-bottom: 18px;
+  }
+  #about {
+    padding-top: 70px;
+  }
+}
+
+/* Skills grid: smaller icons on narrow screens */
+@media (max-width: 400px) {
+  #skills .icons-grid { grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); }
+  #skills .icon { width: 50px; height: 50px; padding: 12px; }
+  #skills .icon-label { font-size: 11px; }
+}

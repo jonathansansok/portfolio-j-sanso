@@ -14,12 +14,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
 
-    <title>Jonathan Sansó | Full-Stack Developer — React, Next.js, Node.js, TypeScript</title>
+    <title>Jonathan Sansó | Full-Stack Developer - React, Next.js, Node.js, TypeScript</title>
 
     <!-- SEO Meta -->
-    <meta name="description" content="Jonathan Sansó — Senior Full-Stack Developer specializing in React, Next.js, TypeScript, Node.js, NestJS, and PostgreSQL. I build multi-tenant SaaS platforms, POS systems, and AI document automation with security-first delivery. Open to remote opportunities." />
+    <meta name="description" content="Jonathan Sansó - Senior Full-Stack Developer specializing in React, Next.js, TypeScript, Node.js, NestJS, and PostgreSQL. I build multi-tenant SaaS platforms, POS systems, and AI document automation with security-first delivery. Open to remote opportunities." />
     <meta name="keywords" content="Full-Stack Developer, React Developer, Next.js Developer, Node.js Developer, TypeScript, NestJS, PostgreSQL, Supabase, Multi-tenant SaaS, Software Engineer, Frontend Developer, Backend Developer, JavaScript Developer, Python, AWS, Docker, Remote Developer" />
     <meta name="author" content="Jonathan Sansó" />
     <meta name="robots" content="index, follow" />
@@ -28,17 +32,17 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://portfolio-sanso-jonathan.netlify.app/" />
-    <meta property="og:title" content="Jonathan Sansó | Full-Stack Developer — React, Next.js, Node.js" />
+    <meta property="og:title" content="Jonathan Sansó | Full-Stack Developer - React, Next.js, Node.js" />
     <meta property="og:description" content="Senior Full-Stack Developer building multi-tenant SaaS, POS platforms, and AI automation with React, Next.js, TypeScript, NestJS, and PostgreSQL. Open to remote opportunities." />
     <meta property="og:image" content="https://portfolio-sanso-jonathan.netlify.app/assets/jonathan-sanso-full-stack.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Jonathan Sansó — Portfolio" />
+    <meta property="og:site_name" content="Jonathan Sansó - Portfolio" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Jonathan Sansó | Full-Stack Developer — React, Next.js, Node.js" />
+    <meta name="twitter:title" content="Jonathan Sansó | Full-Stack Developer - React, Next.js, Node.js" />
     <meta name="twitter:description" content="Senior Full-Stack Developer building multi-tenant SaaS, POS platforms, and AI automation. Open to remote opportunities." />
     <meta name="twitter:image" content="https://portfolio-sanso-jonathan.netlify.app/assets/jonathan-sanso-full-stack.jpg" />
 
@@ -84,7 +88,7 @@
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Jonathan Sansó — Full-Stack Developer Portfolio",
+        "name": "Jonathan Sansó - Full-Stack Developer Portfolio",
         "url": "https://portfolio-sanso-jonathan.netlify.app/",
         "description": "Portfolio of Jonathan Sansó, Senior Full-Stack Developer specializing in React, Next.js, Node.js, TypeScript, and multi-tenant SaaS platforms.",
         "author": {
@@ -104,13 +108,13 @@
           {
             "@type": "ListItem",
             "position": 1,
-            "name": "Niappa POS — Multi-tenant Restaurant SaaS",
+            "name": "Niappa POS - Multi-tenant Restaurant SaaS",
             "url": "https://portfolio-sanso-jonathan.netlify.app/#projects"
           },
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "Oceans HR (ATS) — Recruitment Platform",
+            "name": "Oceans HR (ATS) - Recruitment Platform",
             "url": "https://portfolio-sanso-jonathan.netlify.app/#projects"
           },
           {
@@ -122,7 +126,7 @@
           {
             "@type": "ListItem",
             "position": 4,
-            "name": "Complex Events Platform — National-scale System",
+            "name": "Complex Events Platform - National-scale System",
             "url": "https://portfolio-sanso-jonathan.netlify.app/#projects"
           }
         ]
@@ -222,7 +226,6 @@
 
           <h2 class="margintop">
             <span>Jonathan Sansó</span>
-            <span class="sep" aria-hidden="true"> | </span>
             Full-Stack Developer · 3+ years shipping multi-tenant
             SaaS products end-to-end
           </h2>
@@ -232,26 +235,25 @@
             to production — in weekly delivery cycles aligned with
             product and design teams (Figma → dev → release).
             <br /><br />
-            I've built a <b>restaurant POS</b> where owners manage
-            every branch from one dashboard: menus, stock, suppliers,
-            <b>table orders with split checks</b>, and
-            <b>Mercado Pago payments</b> — all with real-time
-            inventory that stays accurate after every sale, void,
-            or restore. Operations teams replaced daily spreadsheets
-            with <b>automated sales &amp; cash-audit reports</b>.
+            At the <b>Argentine Federal Penitentiary Service</b>,
+            I led a <b>two-platform ecosystem</b> (internal ops +
+            public verification portal) with secure data flows for
+            multiple stakeholders. I built an <b>AI document-intelligence
+            pipeline</b> (Tesseract OCR, NLP, Speech-to-Text) with
+            human-in-the-loop review, engineered <b>secure document
+            verification</b> (HMAC-SHA256, JWT, watermarking), and
+            automated <b>operational reporting</b> (PDF/Excel/Word)
+            replacing manual workflows. Infrastructure includes
+            <b>Redis async queues</b>, signed requests with idempotency,
+            and containerized deployments (Docker, NGINX, Debian).
             <br /><br />
-            I also delivered an <b>ATS recruitment platform</b>
-            (Kanban pipeline, funnel analytics, RBAC per company),
-            an <b>AI document-intelligence pipeline</b> that extracts
-            and summarizes data from scans, images, and audio with
-            human-in-the-loop review, and a <b>secure public
-            verification portal</b> with time-limited links and
-            cryptographic integrity checks.
+            At <b>Ocean Stack</b>, I built <b>Niappa POS</b> — a
+            multi-tenant restaurant platform — and <b>Oceans HR</b>,
+            an ATS with Kanban pipelines and recruitment analytics.
             <br /><br />
             Every product ships with <b>tenant isolation</b>,
-            <b>role-based access</b>, <b>MFA</b>, and
-            infrastructure designed for <b>zero-downtime
-            resilience</b>.
+            <b>role-based access</b>, <b>MFA</b>, and containerized
+            infrastructure designed for <b>zero-downtime resilience</b>.
           </p>
           <div class="cta-wrap">
             <a
@@ -278,11 +280,11 @@
       </div>
     </section>
 
-    <section id="about">
+    <section id="about" data-reveal>
       <div class="photo-container">
         <img
           src="./assets/fotolinkedinperfilfrontal.jpg"
-          alt="Jonathan Sansó — Senior Full-Stack Developer profile photo"
+          alt="Jonathan Sansó - Senior Full-Stack Developer profile photo"
           class="profile-photo"
           loading="lazy"
           decoding="async"
@@ -302,7 +304,7 @@
 
         <div>
           <p>
-            I take products from idea to production — working inside
+            I take products from idea to production - working inside
             a <b>structured delivery loop</b> with CTO and PM, using
             Figma as the source of truth, shipping iterative releases
             every week, and polishing UX until the experience feels
@@ -311,10 +313,10 @@
 
           <p>
             At <b>Ocean Stack</b> I built two products:
-            <b>Niappa POS</b> — a multi-tenant restaurant platform
+            <b>Niappa POS</b> - a multi-tenant restaurant platform
             where chains manage menus, stock, suppliers, orders with
             split checks, and Mercado Pago payments from a single
-            back-office — and <b>Oceans HR</b>, an ATS with Kanban
+            back-office - and <b>Oceans HR</b>, an ATS with Kanban
             pipelines, candidate tracking, and recruitment funnel
             reports. Each company sees only its own data.
           </p>
@@ -333,7 +335,7 @@
             Every product I ship includes <b>tenant isolation</b>,
             <b>role-based permissions</b>, <b>MFA</b>, and
             containerized infrastructure with <b>automated backups</b>
-            — so operations teams can trust the system without
+            - so operations teams can trust the system without
             thinking about security.
           </p>
         </div>
@@ -341,7 +343,7 @@
     </section>
 
     <!-- SKILLS SECTION -->
-    <section id="skills">
+    <section id="skills" data-reveal>
       <h3 class="title-section">Technical skills</h3>
           <div class="icons-grid">
           <a class="icon-item" href="https://react.dev" target="_blank" rel="noopener noreferrer"><span class="icon"><img src="./Logos/react.svg" title="React" alt="react" /></span><span class="icon-label">React</span></a>
@@ -367,26 +369,26 @@
     </section>
 
     <!-- PROJECTS SECTION -->
-    <section id="projects">
+    <section id="projects" data-reveal>
       <h3 class="title-section">MY PROJECTS</h3>
       <div class="row">
         <div class="project">
           <div class="overlay"></div>
           <img
             src="./assets/niappa.png"
-            alt="[Private] Ocean Stack — Niappa POS"
+            alt="[Private] Ocean Stack - Niappa POS"
             width="800"
             height="450"
             loading="lazy"
             decoding="async"
           />
           <div class="info">
-            <h4>[Private] Ocean Stack — Niappa POS</h4>
+            <h4>[Private] Ocean Stack - Niappa POS</h4>
             <p class="compact-paragraph clamp">
               Multi-tenant <b>POS &amp; Orders platform</b> that lets
               restaurant chains run every branch from one dashboard.
               Owners control <b>menus, ingredients, stock, suppliers</b>
-              and staff — each location operates with its own
+              and staff - each location operates with its own
               isolated data. Waiters open <b>table sessions</b>,
               take orders with <b>split checks</b>, and edit/void/restore
               items while <b>stock stays accurate end-to-end</b>.
@@ -424,14 +426,14 @@
           <div class="overlay"></div>
           <img
             src="./assets/ohr.png"
-            alt="[Private] Ocean Stack — Oceans HR (ATS)"
+            alt="[Private] Ocean Stack - Oceans HR (ATS)"
             width="800"
             height="450"
             loading="lazy"
             decoding="async"
           />
           <div class="info">
-            <h4>[Private] Ocean Stack — Oceans HR (ATS)</h4>
+            <h4>[Private] Ocean Stack - Oceans HR (ATS)</h4>
             <p class="compact-paragraph clamp">
               <b>Applicant Tracking System</b> that gives HR teams
               full control of their hiring pipeline. Recruiters
@@ -473,14 +475,14 @@
           <div class="overlay"></div>
           <img
             src="./assets/ig.png"
-            alt="Project: Social Basic — Technical Challenge"
+            alt="Project: Social Basic - Technical Challenge"
           />
           <div class="info">
-            <h4>Frontend Instagram — Technical Challenge</h4>
+            <h4>Frontend Instagram - Technical Challenge</h4>
             <p class="compact-paragraph clamp">
               Social platform prototype where users <b>post, comment,
               like, save content</b>, and browse a <b>profile activity
-              feed</b> — modeled after Instagram's core UX. Includes
+              feed</b> - modeled after Instagram's core UX. Includes
               <b>Google OAuth login</b>, persistent state across
               sessions, and a <b>component library documented in
               Storybook</b>. Automated deployment via <b>Vercel
@@ -524,7 +526,7 @@
             <p class="compact-paragraph clamp">
               Public-facing product that lets <b>national and
               international entities verify document authenticity</b>
-              instantly — no login, no friction. A recipient opens
+              instantly - no login, no friction. A recipient opens
               a <b>time-limited secure link</b>, sees the document
               with a <b>watermark overlay</b>, and confirms integrity
               via <b>HMAC-SHA256 cryptographic validation</b>. Copy,
@@ -578,7 +580,7 @@
               forms</b> with validations and attachments, view
               incidents on an <b>interactive map</b>, and generate
               <b>automated PDF/Excel/Word reports</b> with charts
-              and location filters — eliminating hours of manual
+              and location filters - eliminating hours of manual
               reporting. <b>WhatsApp alerts</b> notify coordinators
               in real time. Secured with <b>MFA</b>, session controls,
               and <b>automated backups</b>. Containerized on
@@ -646,9 +648,9 @@
           <div class="overlay"></div>
           <img src="./assets/fondo-virtuastate.png" alt="VirtuaState Client" />
           <div class="info">
-            <h4>VirtuaState — Frontend Developer (May 2022 — Dec 2023)</h4>
+            <h4>VirtuaState - Frontend Developer (May 2022 - Dec 2023)</h4>
             <p class="compact-paragraph clamp">
-              Marketing website for a <b>VR/AR studio</b> client —
+              Marketing website for a <b>VR/AR studio</b> client -
               designed to convert visitors into leads with a
               <b>mobile-first</b> layout, fast load times, and
               <b>SEO best practices</b>. Delivered brand-aligned
@@ -718,7 +720,7 @@
             <p class="compact-paragraph clamp">
               Online store prototype with <b>product catalog</b>,
               <b>shopping cart</b>, and <b>real-time data sync</b>.
-              Users browse, add to cart, and checkout — state
+              Users browse, add to cart, and checkout - state
               persists across sessions via <b>Firebase</b>. Built
               with <b>React</b>, <b>JavaScript</b> and <b>Bootstrap</b>.
             </p>
@@ -889,7 +891,7 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact">
+    <section id="contact" data-reveal>
       <h3 class="title-section">Contact me</h3>
       <div class="form-container">
         <form
