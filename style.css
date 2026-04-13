@@ -504,7 +504,7 @@ a.icon-item:hover .icon-label {
 #projects .row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 32px;
   margin: 30px 0;
 }
 
@@ -517,7 +517,7 @@ a.icon-item:hover .icon-label {
 #projects .row .project {
   width: 100%;
   border: none;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.45);
   margin: 0;
   overflow: hidden;
 }
