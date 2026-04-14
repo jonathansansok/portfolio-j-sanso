@@ -72,7 +72,7 @@
           "Supabase", "PostgreSQL", "Row Level Security",
           "MySQL", "MongoDB", "Redis",
           "Docker", "NGINX", "AWS", "Terraform",
-          "Python", "FastAPI", "OCR", "NLP",
+          "Python", "FastAPI", "OCR", "NLP", "Gemini API", "LLM",
           "JWT", "MFA", "CSRF", "HMAC",
           "Git", "CI/CD", "Agile", "Scrum"
         ],
@@ -114,7 +114,7 @@
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "Oceans HR (ATS) - Recruitment Platform",
+            "name": "Oceans HR (ATS) - Recruitment Platform with AI CV Matching Engine",
             "url": "https://portfolio-sanso-jonathan.netlify.app/#projects"
           },
           {
@@ -299,7 +299,8 @@
           React · Next.js · TypeScript · Tailwind · Node.js · NestJS · Prisma ·
           Supabase (PostgreSQL RLS) · Triggers/RPC · MySQL · MongoDB · Docker ·
           NGINX · Debian · Git · GitHub · AWS (EC2, RDS, S3, CloudFront) ·
-          Terraform (IaC) · Python (FastAPI, Pandas) · AI (OCR/NLP/STT)
+          Terraform (IaC) · Python (FastAPI, Pandas) · AI (OCR/NLP/STT) ·
+          Gemini API (LLM cascade)
         </h3>
 
         <div>
@@ -317,8 +318,10 @@
             where chains manage menus, stock, suppliers, orders with
             split checks, and Mercado Pago payments from a single
             back-office - and <b>Oceans HR</b>, an ATS with Kanban
-            pipelines, candidate tracking, and recruitment funnel
-            reports. Each company sees only its own data.
+            pipelines, candidate tracking, recruitment funnel reports,
+            and an <b>AI-powered CV matching engine</b> (Gemini API
+            with 3-model cascade) that scores candidates across 8
+            weighted criteria. Each company sees only its own data.
           </p>
 
           <p>
@@ -440,10 +443,17 @@
               manage vacancies, move candidates through a
               <b>drag-and-drop Kanban board</b>, and keep notes and
               comments per profile. <b>Recruitment funnel reports</b>
-              reveal exactly where candidates drop off, helping
-              teams optimize their process. Each company sees only
-              its own data with <b>company-level RBAC</b>. Full ES/EN
-              <b>i18n</b>. Built with <b>Next.js 16</b>, <b>React 19</b>,
+              reveal where candidates drop off. Includes an
+              <b>AI-powered CV matching engine</b>: LLM integration
+              (<b>Gemini API</b> with 3-model cascade fallback for HA),
+              <b>PDF text extraction</b>, weighted scoring across
+              <b>8 criteria</b> (skills, seniority, role, education,
+              location, salary, language, industry), structured JSON
+              output, drag-and-drop upload, <b>color-coded score
+              cards</b>, per-criteria progress bars, and automated
+              candidate creation. Each company sees only its own data
+              with <b>company-level RBAC</b>. Full ES/EN <b>i18n</b>.
+              Built with <b>Next.js 16</b>, <b>React 19</b>,
               <b>TanStack Query v5</b>, <b>Zod v4</b>, <b>@dnd-kit</b>
               and <b>Supabase RLS</b>.
             </p>
