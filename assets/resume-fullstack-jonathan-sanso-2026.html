@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+  @page { size: A4; margin: 9mm 11mm; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #fff; }
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.27;
+    color: #222;
+  }
+  h1 {
+    font-size: 18pt;
+    text-align: center;
+    margin: 0 0 2px;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  .center { text-align: center; margin: 1px 0; font-size: 8.3pt; }
+  .links { text-align: center; margin: 2px 0 4px; font-size: 7.8pt; }
+  .links a { color: #0a58ca; text-decoration: underline; }
+  h2 {
+    font-size: 9.6pt;
+    text-transform: uppercase;
+    border-bottom: 1.1px solid #222;
+    padding-bottom: 1px;
+    margin: 6px 0 3px;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 8.9pt;
+    margin: 4px 0 1px;
+    font-weight: bold;
+  }
+  h3.job { color: #0a58ca; }
+  h3.job .role { color: #0a58ca; }
+  .url-line strong.subjob { color: #0a58ca; }
+  .role { font-style: italic; font-weight: normal; }
+  .meta-italic { font-style: italic; font-size: 8pt; margin: 0 0 1px; color: #444; }
+  .url-line { margin: 0 0 1px; font-size: 8pt; }
+  .url-line a { color: #0a58ca; text-decoration: underline; word-break: break-all; }
+  ul {
+    margin: 1px 0 3px 0;
+    padding-left: 12px;
+    list-style: none;
+  }
+  ul li {
+    position: relative;
+    padding-left: 9px;
+    margin-bottom: 0.5px;
+    text-align: justify;
+  }
+  ul li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  p { margin: 1px 0; }
+  .skills p { margin: 0.5px 0; }
+  a { color: #0a58ca; }
+  strong { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h1>JONATHAN SANSO</h1>
+<p class="center">Full-Stack Developer | AI Engineering (Gemini LLM, OCR/NLP/STT) | Multi-tenant SaaS (Supabase/Postgres RLS)</p>
+<p class="center">Buenos Aires, Argentina | +54 9 11 6912-3268 | jonasans2@live.com.ar | English B2</p>
+<p class="links">
+  <a href="https://portfolio-sanso-jonathan.netlify.app">https://portfolio-sanso-jonathan.netlify.app</a>
+  &nbsp;|&nbsp;
+  <a href="https://github.com/jonathansansok">https://github.com/jonathansansok</a>
+  &nbsp;|&nbsp;
+  <a href="https://linkedin.com/in/jonathan-sanso-fullstack">https://linkedin.com/in/jonathan-sanso-fullstack</a>
+</p>
+
+<h2>Summary</h2>
+<p>Full-Stack Developer with 3+ years shipping multi-tenant SaaS products end-to-end, with strong focus on <strong>AI integration</strong>. Built an <strong>AI-powered CV Matching Engine using Google Gemini API</strong> (3-model LLM cascade) and a <strong>Python AI document-intelligence pipeline</strong> (Tesseract OCR, NLP, Speech-to-Text) replacing manual workflows. Core expertise: tenant isolation (Supabase RLS), POS/orders lifecycle, RBAC, and security-first architecture (MFA, CSRF, HMAC/JWT). Daily stack: Next.js, React, TypeScript, Tailwind, Supabase/PostgreSQL, NestJS, Prisma, Python (FastAPI, Pandas), Docker, NGINX, AWS, Terraform. Mercado Pago integration.</p>
+
+<h2>Technical Skills</h2>
+<div class="skills">
+  <p><strong>AI &amp; Data:</strong> Google Gemini API (LLM cascade fallback), Tesseract OCR, NLP, Speech-to-Text, PDF text extraction, weighted scoring, Pandas, Python ETL, jsPDF, ExcelJS</p>
+  <p><strong>Frontend:</strong> Next.js 16, React 19, TypeScript, Tailwind CSS, HTML5, CSS3, JavaScript, Zustand, TanStack Query v5, Zod v4, react-hook-form, @dnd-kit, ShadCN UI</p>
+  <p><strong>Backend:</strong> NestJS, Node.js, Prisma, FastAPI (Python), Express, GraphQL</p>
+  <p><strong>Databases:</strong> PostgreSQL (Supabase RLS, Triggers, RPC, Indexes), MySQL, MariaDB, MongoDB, SQL Server, Redis (BullMQ)</p>
+  <p><strong>DevOps &amp; Infra:</strong> Docker, NGINX, Debian/Linux, AWS (EC2, RDS, S3, CloudFront), Terraform, Vercel, Git/GitHub, CI/CD</p>
+  <p><strong>Security:</strong> Auth0, MFA/2FA, CSRF, Helmet/CORS, HMAC-SHA256, JWT, Rate Limiting, Input Sanitization, Watermarking</p>
+</div>
+
+<h2>Professional Experience</h2>
+
+<h3 class="job">Ocean Stack <span class="role">- Full-Stack Developer (Multi-tenant SaaS)</span> - Dec 2025 - Present</h3>
+
+<p class="url-line"><strong class="subjob">Niappa POS</strong> (Multi-tenant Restaurant Platform) - <a href="https://niappa-restaurant.vercel.app">https://niappa-restaurant.vercel.app</a></p>
+<ul>
+  <li>Implemented tenant-safe isolation and role-based permissions across modules so each business only sees and mutates its own data (Supabase Postgres, RLS/Policies).</li>
+  <li>Delivered operational back-office flows (products, ingredients, stock, counts, suppliers) with strong consistency via DB automation (Postgres triggers, indexes, SQL/RPC).</li>
+  <li>Implemented orders at scale: table sessions + split checks, resilient order lifecycle, edit/void/restore flows keeping stock accurate end-to-end (RPC, idempotent stock adjustments). Mercado Pago integration.</li>
+  <li>Built reporting exports (PDF/Excel sales + cash audit) and productivity UI (i18n ES/EN, search, sorting, confirmations).</li>
+</ul>
+
+<p class="url-line"><strong class="subjob">Oceans HR (ATS) with AI CV Matching Engine</strong> - <a href="https://oceans-hr.vercel.app">https://oceans-hr.vercel.app</a></p>
+<ul>
+  <li><strong>AI-Powered CV Matching Engine:</strong> integrated <strong>Google Gemini API with 3-model cascade fallback for HA</strong>, PDF text extraction, weighted scoring across 8 criteria (skills, seniority, role, education, location, salary, language, industry), structured JSON output, and automated candidate creation pipeline.</li>
+  <li>Frontend UX: drag-and-drop CV upload, color-coded score cards, per-criteria progress bars (Next.js App Router, Supabase RLS).</li>
+  <li>Built ATS module: Kanban pipeline with drag-and-drop, vacancy management, candidate profiles with notes, recruitment funnel reports, RBAC with company-level roles, full ES/EN i18n (Next.js 16, React 19, TanStack Query v5, Zod v4, @dnd-kit, Supabase RLS).</li>
+  <li>Shipped weekly increments in structured delivery loop: Figma as source of truth, daily alignment with CTO + PM, iterative releases, UX/UI polishing.</li>
+</ul>
+
+<h3 class="job">Argentine Federal Penitentiary Service <span class="role">- Full-Stack Developer / AI Engineer</span> - Jan 2024 - Present</h3>
+<p class="meta-italic">Private repos | Two-platform ecosystem: internal ops + public verification portal</p>
+<ul>
+  <li><strong>AI Document Intelligence Pipeline (Python):</strong> built end-to-end pipeline that extracts and summarizes content from scans, images and audio with human-in-the-loop review. Stack: <strong>Python, FastAPI, Tesseract OCR, NLP, Speech-to-Text</strong>. Replaced hours of manual transcription per day.</li>
+  <li><strong>Automated Operational Reporting:</strong> generates PDF/Excel/Word reports with charts, filters and standardized formatting using <strong>TypeScript and Pandas</strong>, replacing manual spreadsheet workflows.</li>
+  <li><strong>Secure Document Verification:</strong> engineered time-limited access, cryptographic validation, anti-exfiltration controls (HMAC-SHA256, JWT, watermarking) for public verification portal.</li>
+  <li>Implemented end-to-end security (MFA, CSRF, input sanitization, rate limiting, Helmet/CORS) and containerized infrastructure with reverse proxying and automated backups (Docker, NGINX, Debian).</li>
+  <li>Built secure integration layer: signed requests, idempotency, clock-skew validation, file integrity checks (SHA-256).</li>
+  <li>Leveraged Redis async job queues (audit logging, cross-service publishing, scheduled sync) with BullMQ + server-side caching with in-memory fallback for zero-downtime resilience.</li>
+  <li>Led delivery of two-platform ecosystem with secure data flows and controlled access for multiple stakeholders (React, Next.js, TypeScript, Tailwind, NestJS, Prisma).</li>
+</ul>
+
+<h3 class="job">VirtuaState <span class="role">- Frontend Developer</span> - May 2022 - Dec 2023</h3>
+<ul>
+  <li>Built responsive marketing site for VR/AR studio with SEO and performance optimizations (HTML5, CSS3, JavaScript, mobile-first). Live: <a href="https://www.virtuastate.net">https://www.virtuastate.net</a></li>
+</ul>
+
+<h2>Education</h2>
+<h3>Higher Degree in Programming <span class="role">- Teclab</span> - Aug 2022 - Aug 2024</h3>
+<ul>
+  <li>Software fundamentals and delivery practices: databases, web development, UX, cloud basics, project management.</li>
+</ul>
+<h3>Full-Stack Web Development <span class="role">- CoderHouse</span> - Jan 2022 - Mar 2023</h3>
+<ul>
+  <li>End-to-end projects: frontend/backend foundations, web app architecture (HTML5, EJS, CSS/SASS, React, Node.js, MongoDB, Express, GraphQL). Live: <a href="https://react-e-commerce-j-sanso.vercel.app">https://react-e-commerce-j-sanso.vercel.app</a></li>
+</ul>
+
+</body>
+</html>
