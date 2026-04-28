@@ -496,10 +496,10 @@ body::before {
 }
 
 #skills .icons-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 24px 16px;
-  justify-items: center;
+  justify-content: center;
   max-width: var(--container-wide);
   margin: 30px auto 0;
 }
@@ -1190,7 +1190,7 @@ footer a:hover { color: var(--brand); }
 
   /* Skills */
   #skills { padding: 50px 20px; }
-  #skills .icons-grid { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
+  #skills .icons-grid { gap: 16px 12px; }
 
 /* Projects */
 #projects {
@@ -1344,7 +1344,7 @@ body.modal-open { overflow: hidden; }
 
 /* Skills grid: smaller icons on narrow screens */
 @media (max-width: 400px) {
-  #skills .icons-grid { grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); }
+  #skills .icons-grid { gap: 12px 8px; }
   #skills .icon { width: 50px; height: 50px; padding: 12px; }
   #skills .icon-label { font-size: 11px; }
 }

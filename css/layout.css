@@ -272,10 +272,10 @@
 }
 
 #skills .icons-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 24px 16px;
-  justify-items: center;
+  justify-content: center;
   max-width: var(--container-wide);
   margin: 30px auto 0;
 }
