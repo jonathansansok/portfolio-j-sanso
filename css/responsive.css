@@ -116,9 +116,6 @@
 
   .toggle-more {
     display: inline-flex;
-    position: absolute;
-    top: 12px;
-    right: 12px;
     z-index: 2;
   }
 
@@ -170,10 +167,6 @@
 
 /* 480 portrait: ajuste de hero */
 @media (max-width: 480px) and (orientation: portrait) {
-  #initial .content .introduction {
-    transform: translateY(18px) scale(0.85);
-    transform-origin: top center;
-  }
   .margintop { margin-top: 120px; }
 
   .proj-modal__dialog { border-radius: var(--radius-md); padding: 12px; }
@@ -200,6 +193,16 @@ body.modal-open { overflow: hidden; }
 
 /* Mobile vertical: clamp + toggle (si lo usás con .expanded) */
 @media (max-width: 800px) and (orientation: portrait) {
+  #initial { height: auto; min-height: 100svh; }
+  #initial .content .introduction {
+    min-height: 0;
+    justify-content: flex-start;
+    padding-top: 90px;
+    padding-bottom: 32px;
+  }
+  .cta-wrap { width: 100%; }
+  #initial .content .introduction .cta-wrap a.btn { flex: 1 1 100%; }
+
   .clamp { --clamp: 5; }
   .info.expanded .clamp { line-clamp: unset; -webkit-line-clamp: unset; }
 
