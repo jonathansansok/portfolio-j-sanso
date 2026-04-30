@@ -253,7 +253,12 @@
   align-self: center;
   text-align: left;
 }
-#projects .row .project .info p { text-align: left; }
+#projects .row .project .info p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
 #projects .row .project .info p,
 #projects .row .project .info > br {
   grid-column: 1 / -1;
