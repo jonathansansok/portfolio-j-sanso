@@ -76,18 +76,18 @@ def build():
     pdf.set_font("Helvetica", "", 7.5)
     pdf.set_text_color(*pdf.DARK)
     pdf.cell(0, 3.5,
-             "Full-Stack Developer | React/Next.js, Node.js/NestJS | Multi-tenant SaaS (Supabase/Postgres RLS)",
+             "Full-Stack Developer | AI Engineering (Gemini LLM, OCR/NLP/STT) | Multi-tenant SaaS (Supabase/Postgres RLS)",
              align="C", new_x="LMARGIN", new_y="NEXT")
     pdf.cell(0, 3.5,
              "Buenos Aires, Argentina | +54 9 11 6912-3268 | jonasans2@live.com.ar | English B2",
              align="C", new_x="LMARGIN", new_y="NEXT")
 
-    # Links
+    # Links (explicit URLs)
     pdf.set_font("Helvetica", "", 7.5)
     links = [
-        ("Portfolio", "https://portfolio-sanso-jonathan.netlify.app/"),
-        ("GitHub", "https://github.com/jonathansansok"),
-        ("LinkedIn", "https://www.linkedin.com/in/jonathan-sanso-fullstack/"),
+        ("https://portfolio-sanso-jonathan.netlify.app", "https://portfolio-sanso-jonathan.netlify.app/"),
+        ("https://github.com/jonathansansok", "https://github.com/jonathansansok"),
+        ("https://linkedin.com/in/jonathan-sanso-fullstack", "https://www.linkedin.com/in/jonathan-sanso-fullstack/"),
     ]
     total_w = sum(pdf.get_string_width(l[0]) for l in links) + pdf.get_string_width(" | ") * 2
     start_x = (pdf.w - total_w) / 2
@@ -105,7 +105,7 @@ def build():
     pdf.set_font("Helvetica", "", 7.3)
     pdf.set_text_color(*pdf.DARK)
     pdf.multi_cell(0, 3.4, (
-        "Full-Stack Developer with 3+ years building multi-tenant SaaS products end-to-end. "
+        "Full-Stack Developer with 4+ years building multi-tenant SaaS products end-to-end. "
         "Core expertise in tenant isolation (Supabase RLS/Policies), POS/orders lifecycle, RBAC, "
         "AI document intelligence (OCR/NLP/STT), and security-first architecture (MFA, CSRF, HMAC/JWT). "
         "Daily stack: Next.js, React, TypeScript, Tailwind, Supabase/PostgreSQL, NestJS, Prisma. "
