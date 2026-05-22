@@ -23,8 +23,8 @@
     <title>Jonathan Sansó | Full-Stack Developer - React, Next.js, Node.js, TypeScript</title>
 
     <!-- SEO Meta -->
-    <meta name="description" content="Jonathan Sansó - Senior Full-Stack Developer specializing in React, Next.js, TypeScript, Node.js, NestJS, and PostgreSQL. I build multi-tenant SaaS platforms, POS systems, and AI document automation with security-first delivery. Open to remote opportunities." />
-    <meta name="keywords" content="Full-Stack Developer, React Developer, Next.js Developer, Node.js Developer, TypeScript, NestJS, PostgreSQL, Supabase, Multi-tenant SaaS, Software Engineer, Frontend Developer, Backend Developer, JavaScript Developer, Python, AWS, Docker, Remote Developer" />
+    <meta name="description" content="Jonathan Sansó - Senior Full-Stack / AI Engineer specializing in React, Next.js, TypeScript, Node.js, NestJS, PostgreSQL and Python. I build multi-tenant SaaS platforms, POS systems, face recognition pipelines (InsightFace), AI document automation (OCR/NLP/STT), legacy DB migrations (iBase8 to MySQL) and SendGrid email workflows with security-first delivery. Open to remote opportunities." />
+    <meta name="keywords" content="Full-Stack Developer, AI Engineer, Software Engineer, React Developer, Next.js Developer, Node.js Developer, TypeScript, NestJS, PostgreSQL, Supabase, MySQL, MariaDB, Multi-tenant SaaS, Face Recognition, InsightFace, OCR, NLP, Speech-to-Text, Gemini API, LLM, RAG, Vector Search, SendGrid, Legacy DB Migration, ETL, iBase8, Python, FastAPI, AWS, Docker, CI/CD, Remote Developer" />
     <meta name="author" content="Jonathan Sansó" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://portfolio-sanso-jonathan.netlify.app/" />
@@ -32,8 +32,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://portfolio-sanso-jonathan.netlify.app/" />
-    <meta property="og:title" content="Jonathan Sansó | Full-Stack Developer - React, Next.js, Node.js" />
-    <meta property="og:description" content="Senior Full-Stack Developer building multi-tenant SaaS, POS platforms, and AI automation with React, Next.js, TypeScript, NestJS, and PostgreSQL. Open to remote opportunities." />
+    <meta property="og:title" content="Jonathan Sansó | Full-Stack / AI Engineer - React, Next.js, Node.js, Python" />
+    <meta property="og:description" content="Senior Full-Stack / AI Engineer building multi-tenant SaaS, POS platforms, face recognition pipelines, AI document automation, legacy DB migrations and SendGrid email workflows. React, Next.js, TypeScript, NestJS, PostgreSQL, Python. Open to remote opportunities." />
     <meta property="og:image" content="https://portfolio-sanso-jonathan.netlify.app/assets/jonathan-sanso-full-stack.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -42,8 +42,8 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Jonathan Sansó | Full-Stack Developer - React, Next.js, Node.js" />
-    <meta name="twitter:description" content="Senior Full-Stack Developer building multi-tenant SaaS, POS platforms, and AI automation. Open to remote opportunities." />
+    <meta name="twitter:title" content="Jonathan Sansó | Full-Stack / AI Engineer - React, Next.js, Node.js, Python" />
+    <meta name="twitter:description" content="Senior Full-Stack / AI Engineer building multi-tenant SaaS, POS platforms, face recognition, AI document automation, legacy DB migrations and SendGrid email flows. Open to remote opportunities." />
     <meta name="twitter:image" content="https://portfolio-sanso-jonathan.netlify.app/assets/jonathan-sanso-full-stack.jpg" />
 
     <!-- Structured Data: Person -->
@@ -70,11 +70,16 @@
           "React", "Next.js", "TypeScript", "Tailwind CSS",
           "Node.js", "NestJS", "Express", "Prisma",
           "Supabase", "PostgreSQL", "Row Level Security",
-          "MySQL", "MongoDB", "Redis",
+          "MySQL", "MariaDB", "MongoDB", "Redis",
           "Docker", "NGINX", "AWS", "Terraform",
-          "Python", "FastAPI", "OCR", "NLP", "Gemini API", "LLM",
+          "Python", "FastAPI", "InsightFace", "Face Recognition",
+          "OCR", "NLP", "Speech-to-Text", "Gemini API", "LLM",
+          "RAG", "Vector Search", "SendGrid",
+          "Legacy DB Migration", "ETL", "iBase",
+          "REST APIs", "Microservices", "OpenAPI",
           "JWT", "MFA", "CSRF", "HMAC",
-          "Git", "CI/CD", "Agile", "Scrum"
+          "Git", "CI/CD", "GitHub Actions", "Agile", "Scrum",
+          "Unit Testing", "Jest"
         ],
         "alumniOf": {
           "@type": "EducationalOrganization",
@@ -226,10 +231,11 @@
 
           <h2 class="margintop">
             <span>Jonathan Sansó</span>
-            Full-Stack Developer · 4 years shipping multi-tenant
-            SaaS products end-to-end · AI document-intelligence
-            pipelines · secure verification portals · automated
-            operational reporting
+            Full-Stack / AI Engineer · 4 years shipping multi-tenant
+            SaaS products end-to-end · Face recognition pipelines ·
+            AI document-intelligence (OCR/NLP/STT) · Legacy DB
+            migrations (iBase8 → MySQL) · SendGrid email workflows ·
+            Secure verification portals
           </h2>
 
           <p class="description">
@@ -240,18 +246,26 @@
             At the <b>Argentine Federal Penitentiary Service</b>,
             I led a <b>two-platform ecosystem</b> (internal ops +
             public verification portal) with secure data flows for
-            multiple stakeholders. I built an <b>AI document-intelligence
-            pipeline</b> (Tesseract OCR, NLP, Speech-to-Text) with
-            human-in-the-loop review, engineered <b>secure document
-            verification</b> (HMAC-SHA256, JWT, watermarking), and
-            automated <b>operational reporting</b> (PDF/Excel/Word)
-            replacing manual workflows. Infrastructure includes
-            <b>Redis async queues</b>, signed requests with idempotency,
-            and containerized deployments (Docker, NGINX, Debian).
+            multiple stakeholders. I built a <b>Python Face Matcher</b>
+            service in production (<b>InsightFace buffalo_l</b>, 512-d
+            embeddings, NumPy cosine search, MariaDB BLOB storage)
+            and an <b>AI document-intelligence pipeline</b>
+            (Tesseract OCR, NLP, Speech-to-Text) with human-in-the-loop
+            review. Migrated <b>~110 GB of legacy iBase8 data</b>
+            (relational tables + PDFs, scanned images, ZIPs, Word docs)
+            to <b>MySQL/MariaDB</b> across 80+ modules. Engineered
+            <b>secure document verification</b> (HMAC-SHA256, JWT,
+            watermarking) and automated <b>operational reporting</b>
+            (PDF/Excel/Word). Infrastructure includes <b>Redis async
+            queues</b>, signed requests with idempotency, and
+            containerized deployments (Docker, NGINX, PM2, Debian).
             <br /><br />
             At <b>Ocean Stack</b>, I built <b>Niappa POS</b> — a
             multi-tenant restaurant platform — and <b>Oceans HR</b>,
-            an ATS with Kanban pipelines and recruitment analytics.
+            an ATS with Kanban pipelines, an <b>AI CV Matching
+            Engine</b> (Gemini 3-model cascade), and a <b>SendGrid
+            transactional email pipeline</b> triggered by candidate
+            phase changes (automated and semi-automated flows).
             <br /><br />
             Every product ships with <b>tenant isolation</b>,
             <b>role-based access</b>, <b>MFA</b>, and containerized
@@ -259,7 +273,7 @@
           </p>
           <div class="cta-wrap">
             <a
-              href="./assets/resume-fullstack-jonathan-sanso-nodejs-aws-ai.pdf"
+              href="./assets/Jonathan-Sanso-Full-Stack-AI-Engineer.pdf"
               class="btn btn--gradient btn--icon"
               target="_blank"
               rel="noopener noreferrer"
@@ -299,10 +313,12 @@
 
         <h3 class="tech-list">
           React · Next.js · TypeScript · Tailwind · Node.js · NestJS · Prisma ·
-          Supabase (PostgreSQL RLS) · Triggers/RPC · MySQL · MongoDB · Docker ·
-          NGINX · Debian · Git · GitHub · AWS (EC2, RDS, S3, CloudFront) ·
-          Terraform (IaC) · Python (FastAPI, Pandas) · AI (OCR/NLP/STT) ·
-          Gemini API (LLM cascade)
+          Supabase (PostgreSQL RLS) · Triggers/RPC · MySQL · MariaDB · MongoDB ·
+          Redis/BullMQ · Docker · NGINX · Debian · Git · GitHub · CI/CD ·
+          AWS (EC2, RDS, S3, CloudFront) · Terraform (IaC) ·
+          Python (FastAPI, Pandas, InsightFace) · Face Recognition ·
+          AI (OCR/NLP/STT) · Gemini API (LLM cascade) · SendGrid ·
+          Legacy DB Migration (iBase8 → MySQL)
         </h3>
 
         <div>
@@ -321,19 +337,28 @@
             split checks, and Mercado Pago payments from a single
             back-office - and <b>Oceans HR</b>, an ATS with Kanban
             pipelines, candidate tracking, recruitment funnel reports,
-            and an <b>AI-powered CV matching engine</b> (Gemini API
+            an <b>AI-powered CV matching engine</b> (Gemini API
             with 3-model cascade) that scores candidates across 8
-            weighted criteria. Each company sees only its own data.
+            weighted criteria, and a <b>SendGrid transactional
+            email pipeline</b> triggered by candidate phase changes
+            (automated and semi-automated flows with recruiter
+            approval). Each company sees only its own data.
           </p>
 
           <p>
             At the <b>Argentine Federal Penitentiary Service</b>
             I led a two-platform ecosystem: an internal ops system
-            and a public verification portal. I built an
+            and a public verification portal. I built a
+            <b>Python Face Matcher service</b> in production
+            (<b>InsightFace buffalo_l</b>, 512-d embeddings, NumPy
+            cosine search, MariaDB BLOB storage), an
             <b>AI document-intelligence pipeline</b> (OCR, NLP,
             speech-to-text) that automated data extraction from
             scans and audio, and replaced manual report workflows
-            with <b>automated PDF/Excel/Word generation</b>.
+            with <b>automated PDF/Excel/Word generation</b>. I also
+            migrated <b>~110 GB of legacy iBase8 data</b> (relational
+            tables + PDFs, scanned images, ZIPs, Word documents) to
+            <b>MySQL/MariaDB</b> across 80+ modules.
           </p>
 
           <p>
@@ -381,14 +406,14 @@
           <div class="overlay"></div>
           <img
             src="./assets/niappa.png"
-            alt="[Private] Ocean Stack - Niappa POS"
+            alt="Ocean Stack - Niappa POS"
             width="800"
             height="450"
             loading="lazy"
             decoding="async"
           />
           <div class="info">
-            <h4>[Private] Ocean Stack - Niappa POS</h4>
+            <h4>Ocean Stack - Niappa POS</h4>
             <p class="compact-paragraph clamp">
               Multi-tenant <b>POS &amp; Orders platform</b> that lets
               restaurant chains run every branch from one dashboard.
@@ -431,34 +456,50 @@
           <div class="overlay"></div>
           <img
             src="./assets/ohr.png"
-            alt="[Private] Ocean Stack - Oceans HR (ATS)"
+            alt="Ocean Stack - Oceans HR (ATS)"
             width="800"
             height="450"
             loading="lazy"
             decoding="async"
           />
           <div class="info">
-            <h4>[Private] Ocean Stack - Oceans HR (ATS)</h4>
+            <h4>Ocean Stack - Oceans HR (ATS)</h4>
             <p class="compact-paragraph clamp">
-              <b>Applicant Tracking System</b> that gives HR teams
-              full control of their hiring pipeline. Recruiters
-              manage vacancies, move candidates through a
-              <b>drag-and-drop Kanban board</b>, and keep notes and
-              comments per profile. <b>Recruitment funnel reports</b>
-              reveal where candidates drop off. Includes an
-              <b>AI-powered CV matching engine</b>: LLM integration
-              (<b>Gemini API</b> with 3-model cascade fallback for HA),
-              <b>PDF text extraction</b>, weighted scoring across
-              <b>8 criteria</b> (skills, seniority, role, education,
-              location, salary, language, industry), structured JSON
-              output, drag-and-drop upload, <b>color-coded score
-              cards</b>, per-criteria progress bars, and automated
-              candidate creation. Each company sees only its own data
-              with <b>company-level RBAC</b>. Full ES/EN <b>i18n</b>.
-              Built with <b>Next.js 16</b>, <b>React 19</b>,
-              <b>TanStack Query v5</b>, <b>Zod v4</b>, <b>@dnd-kit</b>
-              and <b>Supabase RLS</b>.
+              <b>Applicant Tracking System (ATS)</b> serving hundreds
+              of CVs/month per tenant. Drag-and-drop Kanban pipeline,
+              an <b>AI CV Matching Engine</b> (Gemini 3-model cascade,
+              8 weighted criteria), and a <b>SendGrid email
+              automation</b> triggered on candidate phase changes.
+              Multi-tenant with company-level RBAC and ES/EN i18n.
             </p>
+            <template class="full-desc">
+              <b>Applicant Tracking System (ATS)</b> serving
+              hundreds of CVs/month per tenant.
+              <br /><br />
+              <b>Pipeline management:</b> drag-and-drop Kanban board,
+              vacancy management, candidate notes &amp; comments,
+              recruitment funnel reports.
+              <br /><br />
+              <b>AI CV Matching Engine:</b> Gemini API with 3-model
+              cascade fallback for HA, PDF text extraction, weighted
+              scoring across 8 criteria (skills, seniority, role,
+              education, location, salary, language, industry),
+              structured JSON output, drag-and-drop upload,
+              color-coded score cards, per-criteria progress bars,
+              automated candidate creation.
+              <br /><br />
+              <b>SendGrid email automation:</b> templated transactional
+              emails per phase, automated and semi-automated flows
+              with recruiter approval, Supabase triggers + queued
+              dispatch, idempotency keys, delivery audit log per
+              tenant.
+              <br /><br />
+              <b>Multi-tenant &amp; i18n:</b> company-level RBAC,
+              full ES/EN.
+              <br /><br />
+              <b>Stack:</b> Next.js 16, React 19, TanStack Query v5,
+              Zod v4, @dnd-kit, Supabase RLS.
+            </template>
             <button class="toggle-more" type="button" aria-expanded="false">
               More
             </button>
@@ -545,8 +586,12 @@
               print, and screenshot are blocked to prevent leaks.
               Part of a <b>two-platform ecosystem</b> (internal ops +
               public portal) serving multiple institutional
-              stakeholders. Built with <b>React</b>, <b>TypeScript</b>,
-              <b>NestJS</b>, <b>Prisma</b>, <b>Docker</b> and
+              stakeholders. Internal stack also runs a <b>Python
+              Face Matcher</b> (<b>InsightFace buffalo_l</b>, 512-d
+              embeddings, MariaDB BLOB storage) and a <b>~110 GB
+              iBase8 → MySQL/MariaDB migration</b> across 80+ modules.
+              Built with <b>React</b>, <b>TypeScript</b>, <b>NestJS</b>,
+              <b>Prisma</b>, <b>Python/FastAPI</b>, <b>Docker</b> and
               <b>NGINX</b>.
             </p>
             <button class="toggle-more" type="button" aria-expanded="false">

@@ -89,7 +89,8 @@ document.addEventListener('click', (e) => {
   if (isDesktop) {
     const imgEl = card.querySelector('img');
     const title = info?.querySelector('h4')?.textContent?.trim() || '';
-    const descHTML = info?.querySelector('p')?.innerHTML || '';
+    const fullTpl = info?.querySelector('template.full-desc');
+    const descHTML = fullTpl ? fullTpl.innerHTML : (info?.querySelector('p')?.innerHTML || '');
     const links = Array.from(info?.querySelectorAll('.links a') || []).map(a => ({
       href: a.getAttribute('href'),
       label: a.textContent.trim()

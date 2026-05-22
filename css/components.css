@@ -68,7 +68,7 @@
 
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto minmax(0, 1fr) auto;
   column-gap: 12px;
   row-gap: 10px;
   align-items: start;
@@ -85,11 +85,15 @@
   overflow: hidden;
 }
 
+
 #projects .row .project:hover .clamp {
-  --clamp: 25;
-}
-#projects .row .project:hover .clamp {
+  display: block;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  -webkit-box-orient: unset;
   padding-bottom: 0;
+  overflow: hidden;
+  min-height: 0;
 }
 #projects .row .project:hover .clamp::after {
   display: none;
@@ -118,20 +122,46 @@
 #projects .row .project .info p {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
 }
-/* Oculta scrollbar pero mantiene scroll */
+/* Scrollbar visible y slim dentro del párrafo */
 #projects .row .project .info p {
-  scrollbar-width: none;   /* Firefox */
+  scrollbar-width: thin;                /* Firefox */
+  scrollbar-color: oklch(0.7 0.15 145 / 0.6) transparent;
+  overscroll-behavior: contain;
 }
 #projects .row .project .info p::-webkit-scrollbar {
-  display: none;           /* Chrome/Edge */
+  width: 6px;
+}
+#projects .row .project .info p::-webkit-scrollbar-track {
+  background: transparent;
+}
+#projects .row .project .info p::-webkit-scrollbar-thumb {
+  background: oklch(0.7 0.15 145 / 0.6);
+  border-radius: 3px;
+}
+#projects .row .project .info p::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.75 0.18 145 / 0.85);
 }
 
 #projects .row .project .info .links {
-    margin-top: auto;
+  margin-top: auto;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   font-weight: bold;
-    align-self: stretch;
+  align-self: stretch;
+  position: relative;
+  z-index: 3;
+  padding: 8px 10px;
+  margin-left: -16px;
+  margin-right: -16px;
+  margin-bottom: -14px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 14px;
+  background: oklch(0.06 0.02 240 / 0.92);
+  border-top: 1px solid oklch(1 0 0 / 0.12);
+  backdrop-filter: blur(8px) saturate(1.2);
+  -webkit-backdrop-filter: blur(8px) saturate(1.2);
 }
 
 #projects .row .project .info .links a {
@@ -140,7 +170,7 @@
   text-decoration: none;
   background: transparent;
   border-radius: 4px;
-  padding: 2px 4px;
+  padding: 4px 10px;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
 
@@ -205,11 +235,14 @@
   pointer-events: none;
 }
 
-/* cuando está expandido, no queremos recorte ni fade */
+/* cuando está expandido, no queremos line-clamp ni fade, pero mantener scroll interno */
 .info.expanded .clamp {
-  overflow: visible;
+  display: block;
+  overflow: auto;
   -webkit-line-clamp: unset;
   line-clamp: unset;
+  -webkit-box-orient: unset;
+  min-height: 0;
 }
 .info.expanded .clamp::after {
   display: none;
@@ -326,9 +359,12 @@
   position: absolute;
   top: 10px;
   right: 10px;
+  z-index: 5;
 
   border: 0;
-  background: transparent;
+  background: oklch(0.12 0.02 240 / 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
 
@@ -343,8 +379,8 @@
 
   border-radius: var(--radius-pill);
 
-  transition: box-shadow var(--t-fast), transform var(--t-fast), color var(--t-fast);
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: box-shadow var(--t-fast), transform var(--t-fast), color var(--t-fast), background-color var(--t-fast);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 .proj-modal__close:hover,
@@ -368,6 +404,7 @@
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
   padding-right: 6px;
+  padding-top: 44px;
 }
 
 .proj-modal__content h4 {
