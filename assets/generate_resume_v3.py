@@ -154,7 +154,10 @@ def build():
     pdf.job_header("Ocean Stack", "Full-Stack Developer / Software Engineer (Multi-tenant SaaS)", "Dec 2025 - Present")
     pdf.set_font("Helvetica", "I", 7)
     pdf.set_text_color(80, 80, 80)
-    pdf.cell(0, 3.5, "Products: Niappa POS | Oceans HR (ATS)", new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(pdf.get_string_width("Products: Niappa POS | Oceans HR (ATS)  "), 3.5, "Products: Niappa POS | Oceans HR (ATS)  ")
+    pdf.set_text_color(*pdf.LINK_BLUE)
+    pdf.cell(0, 3.5, "oceansstack.com", link="https://oceansstack.com/", new_x="LMARGIN", new_y="NEXT")
+    pdf.set_text_color(80, 80, 80)
     pdf.ln(0.5)
 
     ocean_bullets = [
@@ -178,6 +181,7 @@ def build():
     pdf.ln(0.5)
 
     afps_bullets = [
+        "Shipped an **on-prem NL intelligence chatbot** over a **90+ table legacy database**: **SQL-RAG** (deterministic parameterized retrieval, **zero hallucinated facts**, zero data egress) + **grounded 100% local LLM** (**Ollama/Qwen2.5**, **CPU-only**, air-gapped) with **LLM structured-output NL parsing** (JSON mode), inline **[n] citations** to source records, and **NDJSON token streaming**; cut a >45s legacy self-join to **sub-second** via indexed single-entity queries + app-side intersection (Next.js, NestJS, Python/FastAPI, Prisma, MariaDB).",
         "Led delivery of a **two-platform ecosystem** (internal ops + public verification portal) with **secure data flows** and controlled access for multiple stakeholders (React, Next.js, TypeScript, Tailwind, NestJS, Prisma).",
         "Built **Python Face Matcher service** in production: **InsightFace buffalo_l** (ONNX CPU) **512-d L2-normalized embeddings**, in-memory (N, 512) float32 index with **NumPy cosine brute-force + argpartition top-K**, **per-UID centroid** (mean + renormalize) for multi-photo enrollment, persisted as **BLOBs in MariaDB**. Endpoints /face/embed, /face/search, /face/search-multi (**FastAPI**).",
         "Built an **AI-assisted document intelligence pipeline**: **OCR** (**Tesseract LSTM** spa+eng with grayscale + binarization threshold 140), **hybrid PDF extraction** (PyPDF2 for native text, **pdf2image + Poppler @ 300 DPI** fallback with per-page OCR, **NDJSON streaming progress**), and **ASR** (**faster-whisper small INT8 CPU** normalizing WhatsApp .opus via ffmpeg), all with **human-in-the-loop review**.",
@@ -185,12 +189,11 @@ def build():
         "Automated **operational reporting** (**PDF/Excel/Word**) with charts, filters, and standardized formatting replacing manual workflows (TypeScript, Pandas).",
         "Engineered **secure document verification**: **time-limited access**, **cryptographic validation**, **anti-exfiltration controls** (**HMAC-SHA256**, **JWT**, watermarking).",
         "Implemented **end-to-end security** (**MFA**, **CSRF**, input sanitization, **rate limiting**, **Helmet/CORS**) and delivered **containerized infrastructure** dimensioned for **170 concurrent users** with reverse proxying, process management and **automated backups** (**Docker**, **NGINX**, **PM2**, Debian).",
-        "Built **secure integration layer**: **signed requests**, **idempotency**, **clock-skew validation**, **file integrity checks** (**SHA-256**).",
         "Leveraged **Redis** for **async job queues** (audit logging, cross-service publishing, scheduled sync) with **BullMQ**, plus **server-side caching** with **automatic in-memory fallback** for **zero-downtime resilience**.",
     ]
     for b in afps_bullets:
         pdf.bullet(b)
-    pdf.ln(0.8)
+    pdf.ln(0.2)
 
     # VirtuaState
     pdf.job_header("VirtuaState", "Frontend Developer", "May 2022 - Dec 2023")

@@ -125,12 +125,18 @@
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "Public Web Verification Portal",
+            "name": "AI Intelligence Chatbot - SQL-RAG + Local LLM (Federal Penitentiary Service)",
             "url": "https://portfolio-sanso-jonathan.netlify.app/#projects"
           },
           {
             "@type": "ListItem",
             "position": 4,
+            "name": "Public Web Verification Portal",
+            "url": "https://portfolio-sanso-jonathan.netlify.app/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
             "name": "Complex Events Platform - National-scale System",
             "url": "https://portfolio-sanso-jonathan.netlify.app/#projects"
           }
@@ -443,6 +449,14 @@
               <p>||</p>
               <a
                 class="quitoSubrayado"
+                href="https://oceansstack.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >oceansstack.com</a
+              >
+              <p>||</p>
+              <a
+                class="quitoSubrayado"
                 href="#"
                 target="_blank"
                 aria-disabled="true"
@@ -515,6 +529,14 @@
               <p>||</p>
               <a
                 class="quitoSubrayado"
+                href="https://oceansstack.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >oceansstack.com</a
+              >
+              <p>||</p>
+              <a
+                class="quitoSubrayado"
                 href="#"
                 target="_blank"
                 aria-disabled="true"
@@ -557,6 +579,90 @@
               <a
                 class="quitoSubrayado"
                 href="https://github.com/jonathansansok/itrock.git"
+                target="_blank"
+                >Repository</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="overlay"></div>
+          <img
+            src="./assets/fondo-chat-back-end.png"
+            alt="[Private] AI Intelligence Chatbot - SQL-RAG + Local LLM"
+            width="800"
+            height="450"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="info">
+            <h4>[Private] AI Intelligence Chatbot (SQL-RAG + Local LLM)</h4>
+            <p class="compact-paragraph clamp">
+              Flagship module of the Federal Penitentiary Service
+              platform: analysts ask in <b>plain Spanish</b> - "what
+              did person X do in June 2022?", "shared events between
+              X and Y" - and get a <b>sourced, citation-backed report
+              in seconds</b>. Turns a multi-step manual cross-reference
+              across a <b>90+ table legacy database</b> into a single
+              natural-language query. Runs <b>100% on-premise /
+              air-gapped</b> on <b>CPU-only</b> hardware - mandatory
+              for classified PII, nothing leaves the network.
+            </p>
+            <template class="full-desc">
+              Flagship module of the Federal Penitentiary Service
+              platform: analysts ask in <b>plain Spanish</b> and get
+              a sourced, citation-backed narrative report in seconds
+              over a <b>90+ table legacy database</b>.
+              <br /><br />
+              <b>SQL-RAG (not vector search):</b> retrieval is
+              deterministic, parameterized SQL over a whitelisted
+              schema registry - exact results, <b>zero hallucinated
+              facts</b>, near-zero RAM. Chosen over embeddings because
+              the data is highly structured and wrong IDs/dates are
+              unacceptable in an intelligence context.
+              <br /><br />
+              <b>Grounded local LLM:</b> a small on-prem model
+              (<b>Ollama / Qwen2.5-1.5B</b>) only narrates records
+              already fetched by SQL - it never invents facts. Graceful
+              degradation: if the LLM is down, users still get the
+              deterministic table + PDF.
+              <br /><br />
+              <b>LLM structured-output NL parsing:</b> free-text
+              questions parsed into typed intent (JSON mode) -
+              single-person history, two-person shared events,
+              filtered module listings - with a confirm-before-run UX
+              and a deterministic fast path for IDs/dates.
+              <br /><br />
+              <b>Inline citations &amp; streaming:</b> each record is
+              numbered and cited <b>[n]</b>, rewritten into deep-links
+              to the source record for full auditability, plus
+              <b>token streaming</b> (NDJSON) for real-time output on
+              slow CPU inference.
+              <br /><br />
+              <b>Query performance:</b> cut a legacy self-join from a
+              &gt;45s timeout to <b>sub-second</b> via indexed
+              single-entity queries + app-side intersection and
+              literal-side <b>COLLATE</b> to preserve the index.
+              <br /><br />
+              <b>Stack:</b> Next.js, React, TypeScript, NestJS, Prisma,
+              Python/FastAPI, Ollama, MariaDB.
+            </template>
+            <button class="toggle-more" type="button" aria-expanded="false">
+              More
+            </button>
+            <br />
+            <div class="links">
+              <a
+                class="quitoSubrayado"
+                href="https://private-vpn-deploy.com"
+                target="_blank"
+                >Deploy</a
+              >
+              <p>||</p>
+              <a
+                class="quitoSubrayado"
+                href="https://private-repository.com"
                 target="_blank"
                 >Repository</a
               >
