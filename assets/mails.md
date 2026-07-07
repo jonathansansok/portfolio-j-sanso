@@ -224,7 +224,7 @@ color-coded score cards, per-criteria progress bars, and automated candidate cre
 - Implemented SendGrid transactional email pipeline triggered by candidate pipeline phase changes (automated and semi-automated flows with recruiter
 approval step): templated emails per stage, Supabase triggers + queued dispatch, idempotency keys, and delivery audit log per tenant.
 Argentine Federal Penitentiary Service -- Full-Stack Developer / AI Engineer / Software Engineer - Jan 2024 - Present
-Private repos -- Sige2i internal platform (NestJS + Next.js + Python/FastAPI)
+Private repos - Sige2i internal platform (NestJS + Next.js + Python/FastAPI)
 - Led delivery of a two-platform ecosystem (internal ops + public verification portal) with secure data flows and controlled access for multiple stakeholders (React,
 Next.js, TypeScript, Tailwind, NestJS, Prisma).
 - Built Python Face Matcher service in production: InsightFace buffalo_l (ONNX CPU) 512-d L2-normalized embeddings, in-memory (N, 512) float32 index with

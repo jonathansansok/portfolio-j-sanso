@@ -185,7 +185,7 @@ def build():
     # Argentine Federal Penitentiary Service
     pdf.job_header("Argentine Federal Penitentiary Service",
                    "Full-Stack Developer / AI Engineer / Software Engineer", "Jan 2024 - Present")
-    pdf.sub_header("Private repos -- Sige2i internal platform (NestJS + Next.js + Python/FastAPI)")
+    pdf.sub_header("Private repos - Sige2i internal platform (NestJS + Next.js + Python/FastAPI)")
     pdf.ln(0.5)
 
     afps_bullets = [
