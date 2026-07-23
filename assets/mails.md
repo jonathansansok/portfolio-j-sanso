@@ -1,7 +1,18 @@
 Generar un **mail de postulación laboral en español**, tono **profesional directo, ATS-friendly y recruiter-friendly - Sin URLS de mis productos por ahora de https://oceans-hr.vercel.app/ https://www.virtuastate.net/ https://react-e-commerce-j-sanso.vercel.app/ https://oceans-hr.vercel.app/ ni https://niappa-restaurant.vercel.app/  **.
 
+## Cómo se usa este prompt
+
+* **El job description YA fue pegado más arriba en este chat.** Usalo como única fuente del aviso. No pidas que lo pegue de nuevo, no esperes más input.
+* **Idioma:** si el aviso está en inglés, generar el mail y el mensaje de LinkedIn **en inglés**. Si está en español, en español.
+* **Salida limpia:** devolver SOLO el mail y el mensaje de LinkedIn, listos para copiar. Sin preámbulo, sin explicaciones, sin "acá va tu mail", sin comentarios finales sobre lo que hiciste.
+* **Al final de todo**, agregar un bloque `DATOS QUE FALTAN` listando lo que hay que completar a mano (nombre del recruiter, empresa, pretensión salarial, etc.). Ese bloque NO es parte del mail.
+* **Nunca inventar** nombre de recruiter, empresa, fechas, tecnologías ni experiencia. Si falta un dato, dejar `[COMPLETAR: ...]` visible.
+* **Sin emojis.**
+
 ## Formato obligatorio
 
+* **Longitud máxima del mail: ~350 palabras.** Tiene que entrar en pantalla y media. Si sobra, recortar proyectos, no recortar el match.
+* Cada bullet: **máximo 2 líneas**.
 * Líneas de ancho medio (70–80% del ancho típico de Hotmail).
 * Usar saltos de línea manuales.
 * No usar párrafos largos.
@@ -12,27 +23,104 @@ Generar un **mail de postulación laboral en español**, tono **profesional dire
 * **NEGRITAS OBLIGATORIAS EN EL MAIL:** marcar en **negrita** keywords del job description, stack, métricas, nombres de rol y de producto. El recruiter lee decenas de mails por día: tiene que escanear el mail en 10 segundos y encontrar el fit sin leer todo.
 * El título de la sección de match se escribe SIEMPRE como **__MATCH CON LA VACANTE__** (negrita + subrayado).
 
+## Speech y contenido (ATS + recruiter)
+
+### ELEVATOR PITCH (usar en sección 1)
+
+Plantilla de 2–3 líneas, negocio primero:
+
+> "Soy **Jonathan Sansó**, **Full-Stack / AI Engineer** con **4 años** construyendo **SaaS multi-tenant** y plataformas con **IA en producción**. <Logro más relevante para ESTA vacante, con métrica>."
+
+Elegir el logro según el aviso, no repetir siempre el mismo.
+
+### BANCO DE MÉTRICAS REALES (usar estas, NUNCA inventar otras)
+
+* **4 años** de experiencia full-stack.
+* Plataforma dimensionada para **170 usuarios concurrentes**.
+* Migración de **~110 GB** de datos legacy (iBase8) a MySQL/MariaDB en **80+ módulos**.
+* ATS que procesa **cientos de CVs por mes por cliente**.
+* Motor de matching con IA: **scoring sobre 8 criterios**, cascada de **3 modelos Gemini** con fallback.
+* Optimización: consulta legacy de **>45 segundos a sub-segundo**.
+* Chatbot **SQL-RAG** sobre **90+ tablas**, **100% local/air-gapped** (cero fuga de datos).
+* Reconocimiento facial **en producción** (embeddings 512-d).
+
+REGLA: cada bullet de match y cada proyecto lleva AL MENOS una métrica o resultado concreto de esta lista. Bullet sin número = bullet débil.
+
+### VERBOS DE IMPACTO
+
+Empezar cada bullet con: Desarrollé, Construí, Lideré, Migré, Automaticé, Reduje, Integré, Diseñé, Optimicé (EN: Built, Shipped, Led, Migrated, Automated, Reduced, Engineered).
+
+PROHIBIDO empezar con: "estuve a cargo de", "me encargué de", "participé en", "ayudé a", "tengo conocimientos de", "trabajé con".
+
+### FRASES PROHIBIDAS (el recruiter las ignora)
+
+"proactivo", "apasionado por la tecnología", "trabajo en equipo", "orientado a resultados", "aprendo rápido", "gran capacidad de adaptación", "comprometido". Reemplazar SIEMPRE por evidencia concreta con métrica.
+
+### IMPACTO DE NEGOCIO
+
+Cada proyecto se cuenta como: problema → solución → resultado medible (tiempo ahorrado, errores eliminados, escala soportada, procesos reemplazados). Las tecnologías van al final, en línea aparte o entre paréntesis. Nunca abrir con la tecnología.
+
+### ATS TEXTO PLANO
+
+* Sin tablas ni columnas.
+* Keywords dentro de oraciones naturales (no listas sueltas de tecnologías).
+* El **título exacto del rol del aviso** debe aparecer al menos 2 veces: en el asunto y en la presentación.
+
+### CTA (cierre)
+
+Proponer paso concreto: disponibilidad **esta misma semana** para una entrevista breve (llamada o video). NO cerrar con "quedo atento" ni "espero su respuesta" a secas.
+
 ## Reglas críticas de estructura
+
+### 0. ASUNTO DEL MAIL (OBLIGATORIO)
+
+Primera línea de la salida, formato exacto:
+
+```
+Asunto: <Título EXACTO del rol tal como figura en el aviso> — Jonathan Sansó | Full-Stack / AI Engineer | 4 años | <modalidad del aviso: Remoto / Híbrido / Presencial>
+```
+
+* El título del rol se copia **literal** del aviso (es lo que matchea el ATS y lo que busca el recruiter).
+* Si el aviso trae ID/código de búsqueda, agregarlo al final: `(Ref. XXXX)`.
 
 ### 1. SALUDO + PRESENTACIÓN
 
 Incluir:
 
-* Quién soy.
-* Rol al que aplico.
+* Saludo personalizado: nombre del recruiter si aparece en el aviso; si no, `Hola equipo de <Empresa>`. Si no hay empresa, `[COMPLETAR: empresa]`.
+* De dónde salió la búsqueda (LinkedIn, portal, referido) si el dato está.
+* Quién soy (**Jonathan Sansó**).
+* Rol al que aplico, con el **título exacto del aviso**.
 * Resumen breve alineado al job post.
+
+### 1.b DATOS FILTRO (OBLIGATORIO, arriba de todo)
+
+Bloque corto de 4–6 líneas, apenas debajo de la presentación. Es lo que el recruiter necesita para no rebotar el mail:
+
+* **Seniority y años de experiencia** (4 años).
+* **Modalidad** que pide el aviso (remoto / híbrido / presencial) y si aplica.
+* **Ubicación + zona horaria:** Buenos Aires, Argentina (GMT-3).
+* **Disponibilidad de inicio.**
+* **Inglés:** B2.
+* **Pretensión salarial:** SOLO si el aviso la pide → `[COMPLETAR: pretensión salarial]`. Si el aviso no la pide, no mencionarla.
+* **Preguntas eliminatorias del aviso** (años de X, seniority, visa, relocación, disponibilidad horaria): responder cada una explícitamente en una línea. Si no hay dato → `[COMPLETAR: ...]`.
 
 ### 2. **__MATCH CON LA VACANTE__** (CRÍTICO)
 
 Escribir el título de esta sección SIEMPRE en negrita + subrayado: **__MATCH CON LA VACANTE__**
 
-4–6 bullets.
+4–6 bullets, formato **espejo de requisitos**: cada bullet arranca con el requisito **con las palabras exactas del aviso**, seguido de cómo lo cumplo.
+
+```
+* **<Requisito literal del aviso>** → <cómo lo cumplo, con métrica o producto real>.
+```
 
 Reglas:
 
-* Usar keywords reales del job description.
+* Usar keywords reales del job description, tal cual están escritas (ATS).
 * Mostrar fit directo con la vacante.
 * Priorizar stack, experiencia, modalidad, idioma, SEO, producto, etc. según el aviso.
+* **Gaps:** si un requisito no lo cumplo, incluir como máximo 1 bullet con la **equivalencia honesta** (tecnología o dominio análogo que sí manejo). Nunca inventar, nunca pedir disculpas, nunca escribir "no tengo experiencia en". Si el gap es menor, omitirlo.
 
 ### 3. ACTUALMENTE
 
@@ -84,13 +172,15 @@ REGLA DE URLS (Ocean Stack):
 * Mencionar el proyecto por nombre, sin link.
 * El resto de proyectos (VirtuaState, React Ecommerce) sí pueden llevar link.
 
-Acá sí deben aparecer:
+Universo de proyectos disponibles:
 
 * Niappa Restaurant POS.
 * Oceans HR.
 * VirtuaState.
 * [Private] Platform for Complex Events.
 * [Private] Public Web Verification Portal.
+
+**SELECCIÓN (importante):** incluir solo los **2–3 más relevantes para el aviso**, no los cinco. Si el aviso es de producto/SaaS → Niappa + Oceans HR. Si es de IA/datos → Oceans HR + Platform for Complex Events. Si es de frontend/marketing → VirtuaState + Niappa. Esto es lo primero que se recorta si el mail supera las ~350 palabras.
 
 IMPORTANTE:
 
@@ -125,22 +215,35 @@ Mostrar diferenciadores reales:
 
 NO repetir proyectos ni volver a explicar productos.
 
-### 7. CIERRE
+### 7. CIERRE + FIRMA
 
 Incluir:
 
 * Interés en la oportunidad.
-* Disponibilidad.
+* Disponibilidad para entrevista.
+* **Línea obligatoria de adjunto:** "Adjunto mi **CV en PDF**." (el CV va adjunto al mail).
 * Saludo profesional.
 
 No escribir "Cierre".
+
+**Firma obligatoria**, en líneas separadas al final:
+
+```
+Jonathan Sansó
+Full-Stack Developer / AI Engineer
++54 9 11 6912-3268 (WhatsApp) | jonasans2@live.com.ar
+Portfolio: https://portfolio-sanso-jonathan.netlify.app/
+LinkedIn: https://www.linkedin.com/in/jonathan-sanso-fullstack/
+GitHub: https://github.com/jonathansansok
+```
 
 ## SALIDA 2 — MENSAJE DE LINKEDIN (OBLIGATORIO)
 
 Devolver SIEMPRE **dos entregables** en la misma respuesta:
 
-1. El **MAIL** completo (7 secciones, con negritas).
+1. El **MAIL** completo (asunto + secciones 1 a 7, con negritas y firma).
 2. El **MENSAJE DE LINKEDIN**.
+3. El bloque `DATOS QUE FALTAN` (fuera del mail) con todo lo marcado `[COMPLETAR: ...]`.
 
 Reglas del mensaje de LinkedIn:
 
@@ -161,16 +264,17 @@ Quedo a disposición para una entrevista.
 Adjunto mi CV en PDF en este mismo chat de LinkedIn.
 ```
 
-* Cuerpo: quién soy (**Jonathan Sansó**), rol al que aplico, bloque de match con el título en MAYÚSCULAS `MATCH CON LA VACANTE` + 3–4 líneas de fit real con keywords del aviso, y cierre con interés + disponibilidad + saludo.
+* Cuerpo: quién soy (**Jonathan Sansó**), rol al que aplico con el título exacto del aviso, bloque de match con el título en MAYÚSCULAS `MATCH CON LA VACANTE` + 3–4 líneas de fit real con keywords del aviso, y cierre con interés + disponibilidad + saludo.
+* Incluir en una sola línea los datos filtro que pida el aviso (modalidad, disponibilidad, inglés B2, GMT-3). Nada de bloque largo.
 * **Línea final OBLIGATORIA:** indicar explícitamente que adjunto mi CV en PDF en este mismo chat de LinkedIn.
 * Omitir por brevedad "Proyectos en producción" detallado y "Diferencial"; conservar presentación, match y cierre.
 * Aplican las mismas reglas de contenido del mail: no inventar experiencia, Ocean Stack SIEMPRE en pasado (Dic 2025 - Jun 2026), NO mostrar URLs de despliegue de Niappa POS ni Oceans HR, React Ecommerce excluido.
 
 ## Datos a usar
 
-[PEGAR JOB DESCRIPTION]
+**Job description:** ya está pegado más arriba en este chat.
 
-[PEGAR MI CV]
+**Mi CV:** está al final de este mismo prompt (sección "mi cv:").
 
 ## Links obligatorios
 
