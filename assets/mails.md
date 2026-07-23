@@ -8,6 +8,9 @@ Generar un **mail de postulación laboral en español**, tono **profesional dire
 * Alta legibilidad.
 * Evitar bloques densos.
 * Usar **negritas** para keywords relevantes.
+* **NOMBRE:** escribir SIEMPRE el apellido como **Sansó** (con tilde en la o), nunca "Sanso". Aplica a presentación, firma, mail y mensaje de LinkedIn.
+* **NEGRITAS OBLIGATORIAS EN EL MAIL:** marcar en **negrita** keywords del job description, stack, métricas, nombres de rol y de producto. El recruiter lee decenas de mails por día: tiene que escanear el mail en 10 segundos y encontrar el fit sin leer todo.
+* El título de la sección de match se escribe SIEMPRE como **__MATCH CON LA VACANTE__** (negrita + subrayado).
 
 ## Reglas críticas de estructura
 
@@ -19,7 +22,9 @@ Incluir:
 * Rol al que aplico.
 * Resumen breve alineado al job post.
 
-### 2. MATCH CON LA VACANTE (CRÍTICO)
+### 2. **__MATCH CON LA VACANTE__** (CRÍTICO)
+
+Escribir el título de esta sección SIEMPRE en negrita + subrayado: **__MATCH CON LA VACANTE__**
 
 4–6 bullets.
 
@@ -38,7 +43,7 @@ Incluir:
 * Empresa / rol.
 * Qué tipo de sistemas desarrollo.
 * Impacto de negocio.
-* Ocean Stack + Servicio Penitenciario Federal.
+* Servicio Penitenciario Federal (rol actual). Ocean Stack solo como experiencia previa reciente (Dic 2025 - Jun 2026), en pasado.
 
 NO incluir:
 
@@ -53,7 +58,7 @@ Si un producto aparece en sección 4, NO volver a describirlo en sección 3.
 
 Ejemplo esperado:
 
-"Ocean Stack — desarrollo SaaS multi-tenant orientado a operaciones, RRHH e IA aplicada."
+"Servicio Penitenciario Federal — desarrollo de plataformas institucionales con IA aplicada. Previamente en Ocean Stack (Dic 2025 - Jun 2026) desarrollé SaaS multi-tenant orientado a operaciones y RRHH."
 
 NO:
 
@@ -130,6 +135,37 @@ Incluir:
 
 No escribir "Cierre".
 
+## SALIDA 2 — MENSAJE DE LINKEDIN (OBLIGATORIO)
+
+Devolver SIEMPRE **dos entregables** en la misma respuesta:
+
+1. El **MAIL** completo (7 secciones, con negritas).
+2. El **MENSAJE DE LINKEDIN**.
+
+Reglas del mensaje de LinkedIn:
+
+* Es una versión **CORTA** del mail, no una copia: 8–12 líneas, máximo ~1.300 caracteres.
+* **SIN markdown de ningún tipo:** LinkedIn no renderiza negritas ni subrayado. Prohibido usar `**`, `__`, `#` o `*` (si hacen falta viñetas, usar `-`).
+* Formato exacto:
+
+```
+Asunto: <nombre exacto de la vacante>
+
+Hola [nombre], soy Jonathan Sansó, Full-Stack / AI Engineer con 4 años...
+
+MATCH CON LA VACANTE
+- ...
+- ...
+
+Quedo a disposición para una entrevista.
+Adjunto mi CV en PDF en este mismo chat de LinkedIn.
+```
+
+* Cuerpo: quién soy (**Jonathan Sansó**), rol al que aplico, bloque de match con el título en MAYÚSCULAS `MATCH CON LA VACANTE` + 3–4 líneas de fit real con keywords del aviso, y cierre con interés + disponibilidad + saludo.
+* **Línea final OBLIGATORIA:** indicar explícitamente que adjunto mi CV en PDF en este mismo chat de LinkedIn.
+* Omitir por brevedad "Proyectos en producción" detallado y "Diferencial"; conservar presentación, match y cierre.
+* Aplican las mismas reglas de contenido del mail: no inventar experiencia, Ocean Stack SIEMPRE en pasado (Dic 2025 - Jun 2026), NO mostrar URLs de despliegue de Niappa POS ni Oceans HR, React Ecommerce excluido.
+
 ## Datos a usar
 
 [PEGAR JOB DESCRIPTION]
@@ -183,7 +219,7 @@ Public verification platform for document authenticity with secure links, waterm
 * NO repetir Niappa / Oceans HR / Private Platform / Portal fuera de "Proyectos en Producción".
 
 mi cv: 
-JONATHAN SANSO
+JONATHAN SANSÓ
 Full-Stack Developer / Software Engineer / AI Engineer | Gemini LLM, Face Recognition, OCR/NLP/STT | Multi-tenant SaaS (Supabase/Postgres RLS)
 Buenos Aires, Argentina | +54 9 11 6912-3268 | jonasans2@live.com.ar | English B2
 https://portfolio-sanso-jonathan.netlify.app | https://github.com/jonathansansok | https://linkedin.com/in/jonathan-sanso-fullstack
@@ -204,7 +240,7 @@ Integrations: SendGrid (transactional email), Mercado Pago, Redis/BullMQ, Webhoo
 Testing & Methods: Unit Testing, Jest, integration tests, Agile / Scrum, Kanban, Code Review, Git Flow
 Security: Auth0, MFA/2FA, CSRF, Helmet/CORS, HMAC-SHA256, JWT, Rate Limiting, Input Sanitization
 PROFESSIONAL EXPERIENCE
-Ocean Stack -- Full-Stack Developer / Software Engineer (Multi-tenant SaaS) - Dec 2025 - Present
+Ocean Stack -- Full-Stack Developer / Software Engineer (Multi-tenant SaaS) - Dec 2025 - Jun 2026
 Products: Niappa POS | Oceans HR (ATS)
 - Shipped weekly product increments in a structured delivery loop: Figma as source of truth, daily alignment with CTO + PM, iterative releases, and UX/UI polishing
 (Next.js, TypeScript, Tailwind).

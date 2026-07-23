@@ -151,7 +151,7 @@ def build():
     pdf.section_title("PROFESSIONAL EXPERIENCE")
 
     # Ocean Stack
-    pdf.job_header("Ocean Stack", "Full-Stack Developer / Software Engineer (Multi-tenant SaaS)", "Dec 2025 - Present")
+    pdf.job_header("Ocean Stack", "Full-Stack Developer / Software Engineer (Multi-tenant SaaS)", "Dec 2025 - Jun 2026")
     pdf.set_font("Helvetica", "I", 7)
     pdf.set_text_color(80, 80, 80)
     pdf.cell(pdf.get_string_width("Products: "), 3.5, "Products: ")
