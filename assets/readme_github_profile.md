@@ -2,14 +2,14 @@
   <img src="./banner.png" alt="Jonathan Sansó — Ssr. Full-Stack Developer" width="100%" />
 </p>
 
-<h3 align="center">Full-Stack Developer / Software Engineer / AI Engineer | Gemini LLM, Face Recognition, OCR/NLP/STT | Multi-tenant SaaS (Supabase/Postgres RLS)</h3>
+<h3 align="center">Full-Stack Developer / Software Engineer / AI Engineer | LangChain/LangGraph, On-prem LLM & RAG, Face Recognition, OCR/NLP/STT | Multi-tenant SaaS (Supabase/Postgres RLS)</h3>
 <p align="center">Buenos Aires, Argentina · Remote · English B2</p>
 
 ---
 
 ### What I do
 **4 years** building **multi-tenant SaaS** and **internal AI platforms** end-to-end — from tenant-isolated backends with **Supabase RLS/Policies** to polished frontends with **Next.js + TypeScript + Tailwind**.  
-I build **face recognition services in production** (**InsightFace buffalo_l**, 512-d L2-normalized embeddings, NumPy cosine search, MariaDB BLOB storage), **AI document intelligence pipelines** (Tesseract OCR, NLP, Speech-to-Text with faster-whisper), **LLM-powered features** (Google Gemini API with 3-model cascade fallback for HA), **SendGrid transactional email workflows**, and **legacy DB migrations** (~110 GB of iBase8 → MySQL/MariaDB across 80+ modules). Deploy with **Docker, NGINX, AWS, Terraform**. Mercado Pago integration.
+I build **on-premise LLM systems in production** with **LangChain (LCEL)** and **LangGraph** — structured output, token streaming, custom observability, feature-flagged rollback, semantic-validation retries with a best-attempt strategy, map-reduce fan-out for small local models, fully **offline RAG** (local embeddings + vector store on MariaDB), and systematic **LLM evaluation** (labeled golden set, A/B/C across backends). I also build **face recognition services in production** (**InsightFace buffalo_l**, 512-d L2-normalized embeddings, NumPy cosine search, MariaDB BLOB storage), **AI document intelligence pipelines** (Tesseract OCR, NLP, Speech-to-Text with faster-whisper), **LLM-powered features** (Google Gemini API with 3-model cascade fallback for HA), **SendGrid transactional email workflows**, and **legacy DB migrations** (~110 GB of iBase8 → MySQL/MariaDB across 80+ modules). Deploy with **Docker, NGINX, AWS, Terraform**. Mercado Pago integration.
 
 ---
 
@@ -20,7 +20,7 @@ I build **face recognition services in production** (**InsightFace buffalo_l**, 
 | **Backend** | NestJS, Node.js, Prisma, FastAPI (Python), Express, GraphQL, REST APIs, OpenAPI/Swagger, Microservices |
 | **Databases** | PostgreSQL (Supabase RLS, Triggers, RPC), MySQL, MariaDB, MongoDB, SQL Server, Redis, iBase (legacy migration) |
 | **DevOps** | Docker, NGINX, AWS (EC2, RDS, S3, CloudFront), Terraform, CI/CD, GitHub Actions, Vercel, PM2, Git/GitHub |
-| **AI & Data** | Gemini API (LLM cascade), InsightFace (buffalo_l, 512-d face embeddings), Tesseract OCR, faster-whisper STT, NLP, Pandas, NumPy, jsPDF, ExcelJS |
+| **AI & Data** | LangChain (LCEL), LangGraph, Ollama/Qwen2.5, local embeddings, vector store on MariaDB, structured output (JSON Schema), Pydantic guardrails, LLM evals, Gemini API (LLM cascade), InsightFace (buffalo_l, 512-d face embeddings), Tesseract OCR, faster-whisper STT, NLP, Pandas, NumPy, jsPDF, ExcelJS |
 | **Integrations** | SendGrid (transactional email), Mercado Pago, Redis/BullMQ, Webhooks (HMAC signed) |
 | **Testing & Methods** | Unit Testing, Jest, integration tests, Agile/Scrum, Kanban, Code Review, Git Flow |
 | **Security** | Auth0, MFA/2FA, CSRF, Helmet/CORS, HMAC-SHA256, JWT, Rate Limiting |
@@ -39,6 +39,7 @@ _Products: [Niappa POS](https://niappa-restaurant.vercel.app/) | [Oceans HR (ATS
 - Mercado Pago API integration, PDF/Excel reporting, full ES/EN i18n.
 
 **Argentine Federal Penitentiary Service** — Full-Stack Developer / AI Engineer / Software Engineer · Jan 2024 – Present  
+- Built an **on-prem NL intelligence chatbot** over a 90+ table legacy database: **SQL-RAG** (deterministic, zero hallucinated facts, zero data egress) + **grounded local LLM** (Ollama/Qwen2.5, CPU-only, air-gapped), orchestrated with **LangChain LCEL** (structured output via server-side JSON Schema, token streaming, custom observability callbacks, byte-for-byte verified parity, feature-flagged zero-downtime rollback) and **LangGraph** (semantic-validation retries with a best-attempt strategy, map-reduce pipeline with parallel fan-out per entity to beat small models' context limits). Backed by a **labeled golden set** and **A/B/C evaluation** across LLM backends, with inline `[n]` citations and NDJSON token streaming; cut a >45s legacy self-join to sub-second.  
 - Led a **national-scale two-platform ecosystem** (internal ops + public verification portal).  
 - Built **Python Face Matcher service** in production: **InsightFace buffalo_l** (ONNX CPU) 512-d L2-normalized embeddings, in-memory NumPy cosine brute-force + argpartition top-K, per-UID centroid (mean + renormalize) for multi-photo enrollment, persisted as BLOBs in MariaDB. Endpoints `/face/embed`, `/face/search`, `/face/search-multi` (FastAPI).  
 - Built **AI document intelligence pipeline**: OCR (Tesseract LSTM spa+eng with grayscale + binarization threshold 140), hybrid PDF extraction (PyPDF2 native + pdf2image + Poppler @ 300 DPI fallback with per-page OCR, NDJSON streaming progress), and ASR (faster-whisper small INT8 CPU normalizing WhatsApp .opus via ffmpeg), all with human-in-the-loop review.  
@@ -76,6 +77,9 @@ const jonathanSanso = {
   role: "Full-Stack Developer / Software Engineer / AI Engineer",
   english: "B2",
   focus: [
+    "On-prem LLM orchestration (LangChain/LangGraph)",
+    "Offline RAG + local embeddings",
+    "LLM evaluation (golden sets, A/B/C)",
     "Multi-tenant SaaS",
     "Face recognition in production",
     "AI document intelligence (OCR/NLP/STT)",
@@ -89,6 +93,10 @@ const jonathanSanso = {
     backend: ["NestJS", "Node.js", "Prisma", "FastAPI", "Express", "GraphQL", "REST APIs", "OpenAPI"],
     databases: ["PostgreSQL (Supabase RLS)", "MySQL", "MariaDB", "MongoDB", "Redis", "SQL Server", "iBase (legacy)"],
     ai_data: [
+      "LangChain (LCEL)",
+      "LangGraph",
+      "Ollama / Qwen2.5 (local, CPU-only)",
+      "Vector store on MariaDB",
       "Gemini API (LLM cascade)",
       "InsightFace (buffalo_l, 512-d face embeddings)",
       "Tesseract OCR",
