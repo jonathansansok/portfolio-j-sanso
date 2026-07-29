@@ -86,7 +86,7 @@ def build():
              "Full-Stack / AI Engineer | LangChain/LangGraph, On-prem LLM & RAG, Face Recognition, OCR/NLP/STT | Multi-tenant SaaS (Supabase RLS)",
              align="C", new_x="LMARGIN", new_y="NEXT")
     pdf.cell(0, 3.5,
-             "Buenos Aires, Argentina | +54 9 11 6912-3268 | jonathansansok@gmail.com | English B2",
+             "Buenos Aires, Argentina | +54 9 11 6912-3268 | jonasans2@live.com.ar | English B2",
              align="C", new_x="LMARGIN", new_y="NEXT")
 
     # Links (explicit URLs)

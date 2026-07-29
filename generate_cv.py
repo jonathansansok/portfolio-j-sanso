@@ -67,7 +67,7 @@ add_run(p2, 'Full-Stack / AI Engineer', bold=True, size=12, color=(30, 90, 160))
 p3 = doc.add_paragraph()
 p3.alignment = WD_ALIGN_PARAGRAPH.CENTER
 set_spacing(p3, after=6)
-add_run(p3, 'Buenos Aires, Argentina  ·  +54 9 11 6912-3268  ·  jonathansansok@gmail.com', size=9, color=(80, 80, 80))
+add_run(p3, 'Buenos Aires, Argentina  ·  +54 9 11 6912-3268  ·  jonasans2@live.com.ar', size=9, color=(80, 80, 80))
 
 p4 = doc.add_paragraph()
 p4.alignment = WD_ALIGN_PARAGRAPH.CENTER
