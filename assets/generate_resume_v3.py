@@ -151,6 +151,18 @@ def build():
     # -- Professional Experience --
     pdf.section_title("PROFESSIONAL EXPERIENCE")
 
+    # Niztech
+    pdf.job_header("Niztech", "AI & Automation Engineer (Full-Stack)", "Aug 2026 - Present")
+    niztech_bullets = [
+        "Automate **legacy back-office platforms built in 2010/2011** with **React + Express + SQLite** internal tools that cross results from independent systems, cutting manual **Data Entry** work.",
+        "Integrate platforms owned by third parties through **API keys, webhooks and queues** (create/read/update records and forms) where no native integration exists.",
+        "Built **Excel + PDF OCR pipelines** with **LLM APIs** for **overtime hours, budgets and invoices**, with structured validation and **human-in-the-loop** review before write-back.",
+        "Shipped an **Excel engine dashboard** that ingests spreadsheets into one platform where they are normalized, linked and queried together.",
+    ]
+    for b in niztech_bullets:
+        pdf.bullet(b)
+    pdf.ln(0.8)
+
     # Ocean Stack
     pdf.job_header("Ocean Stack", "Full-Stack Developer / Software Engineer (Multi-tenant SaaS)", "Dec 2025 - Jun 2026")
     pdf.set_font("Helvetica", "I", 7)
@@ -182,14 +194,12 @@ def build():
     pdf.ln(0.5)
 
     afps_bullets = [
-        "Shipped an **on-prem NL intelligence chatbot** over a **90+ table legacy database**: **SQL-RAG** (deterministic parameterized retrieval, **zero hallucinated facts**, zero data egress) + **grounded 100% local LLM** (**Ollama/Qwen2.5**, **CPU-only**, air-gapped), orchestrated with **LangChain LCEL** - **structured output** via server-side JSON Schema, **token streaming**, custom observability callbacks, **byte-for-byte verified parity**, feature-flagged rollout with **zero-downtime rollback**; inline **[n] citations** to source records; cut a >45s legacy self-join to **sub-second** via indexed single-entity queries + app-side intersection (Next.js, NestJS, Python/FastAPI, Prisma, MariaDB).",
-        "Built a **LangGraph** orchestration layer with **semantic validation** and **feedback-driven retries** (**best-attempt strategy** - a retry never regresses below the prior result) plus a **map-reduce pipeline with parallel fan-out** per entity to beat small local models' context-window limits; backed by a **labeled golden set** and **A/B/C evaluation** across LLM backends, choosing the production default **from measured data**.",
-        "Led delivery of a **two-platform ecosystem** (internal ops + public verification portal) with **secure data flows** and controlled access for multiple stakeholders (React, Next.js, TypeScript, Tailwind, NestJS, Prisma).",
-        "Built **Python Face Matcher service** in production: **InsightFace buffalo_l** (ONNX CPU) **512-d L2-normalized embeddings**, in-memory (N, 512) float32 index with **NumPy cosine brute-force + argpartition top-K**, **per-UID centroid** (mean + renormalize) for multi-photo enrollment, persisted as **BLOBs in MariaDB**. Endpoints /face/embed, /face/search, /face/search-multi (**FastAPI**).",
-        "Built an **AI-assisted document intelligence pipeline**: **OCR** (**Tesseract LSTM** spa+eng with grayscale + binarization threshold 140), **hybrid PDF extraction** (PyPDF2 for native text, **pdf2image + Poppler @ 300 DPI** fallback with per-page OCR, **NDJSON streaming progress**), and **ASR** (**faster-whisper small INT8 CPU** normalizing WhatsApp .opus via ffmpeg), all with **human-in-the-loop review**.",
-        "Migrated **~110 GB of legacy iBase8 data** to **MySQL/MariaDB** across **80+ modules**: relational tables plus heterogeneous binary content (**PDFs**, **scanned images**, **ZIP archives**, **Word documents**). Designed **normalized relational schema**, built **ETL pipelines** with chunked streaming and resumable runs, **classified and stored binary assets** with checksum integrity, validated data integrity end-to-end, and integrated migrated entities into the new **NestJS + Next.js** stack.",
-        "Automated **operational reporting** (**PDF/Excel/Word**) and engineered **secure document verification** (**time-limited access**, **cryptographic validation**, **HMAC-SHA256**, **JWT**, watermarking) replacing manual workflows (TypeScript, Pandas).",
-        "Implemented **end-to-end security** (**MFA**, **CSRF**, rate limiting, **Helmet/CORS**) and **Redis/BullMQ** async job queues with in-memory fallback caching, on **containerized infrastructure** for **170 concurrent users** (**Docker**, **NGINX**, **PM2**, Debian) with automated backups.",
+        "Shipped an **on-prem NL intelligence chatbot** over a **90+ table legacy database**: **SQL-RAG** (deterministic parameterized retrieval, **zero hallucinated facts**, zero data egress) + **grounded 100% local LLM** (**Ollama/Qwen2.5**, CPU-only, air-gapped) orchestrated with **LangChain LCEL** - **structured output** (JSON Schema), **token streaming**, inline **[n] citations**, feature-flagged rollout; cut a >45s legacy self-join to **sub-second** (Next.js, NestJS, Python/FastAPI, Prisma, MariaDB).",
+        "Built a **LangGraph** orchestration layer with **semantic validation**, **feedback-driven retries** (best-attempt strategy) and a **map-reduce pipeline with parallel fan-out** per entity; backed by a **labeled golden set** and **A/B/C evaluation** across LLM backends to pick the production default from measured data.",
+        "Built a production **Python Face Matcher service**: **InsightFace buffalo_l** (ONNX CPU) **512-d embeddings**, in-memory NumPy **cosine top-K** index, **per-UID centroid** enrollment, persisted as BLOBs in MariaDB (**FastAPI**).",
+        "Built an **AI-assisted document intelligence pipeline**: **Tesseract OCR** (spa+eng, binarization), **hybrid PDF extraction** (PyPDF2 + pdf2image/Poppler 300 DPI fallback, NDJSON streaming), and **faster-whisper ASR** (INT8 CPU), all with **human-in-the-loop review**.",
+        "Migrated **~110 GB of legacy iBase8 data** to **MySQL/MariaDB** across **80+ modules** (relational + PDFs, scans, ZIPs, Word): normalized schema, **ETL** with chunked resumable streaming, checksum integrity, integrated into the new **NestJS + Next.js** stack.",
+        "Automated **PDF/Excel/Word reporting** and **secure document verification** (**HMAC-SHA256**, **JWT**, time-limited access, watermarking); implemented **MFA/CSRF/rate limiting**, **Redis/BullMQ** queues and **containerized infra** for **170 concurrent users** (Docker, NGINX, PM2, Debian).",
     ]
     for b in afps_bullets:
         pdf.bullet(b)
