@@ -1,10 +1,9 @@
-"""Generate Jonathan Sanso's resume PDF (v2) with fpdf2.
+"""Generate Jonathan Sanso's resume PDF (v4 - Azure variant) with fpdf2.
 
-v2 changes:
-- SPF: added Python Face Matcher (InsightFace buffalo_l, 512-d embeddings) and
-  legacy iBase8 -> MySQL/MariaDB ETL migration (80+ modules).
-- Oceans HR: added SendGrid automated/semi-automated transactional emails
-  triggered on candidate pipeline phase advancement.
+Clone of generate_resume_v3.py plus:
+- People Transfer Platform: freelance multi-tenant SaaS deployed on Azure
+  (Container Apps + ACR, MySQL Flexible Server, secrets, networking/TLS,
+  Azure CLI/REST debugging), 1 month live in production with real users.
 """
 from fpdf import FPDF
 
@@ -20,60 +19,60 @@ class ResumePDF(FPDF):
     def section_title(self, title):
         self.set_font("Helvetica", "B", 10.5)
         self.set_text_color(*self.BLACK)
-        self.cell(0, 5, title, new_x="LMARGIN", new_y="NEXT")
+        self.cell(0, 4.5, title, new_x="LMARGIN", new_y="NEXT")
         y = self.get_y()
         self.set_draw_color(*self.GRAY_LINE)
         self.set_line_width(0.4)
         self.line(self.l_margin, y, self.w - self.r_margin, y)
-        self.ln(1.5)
+        self.ln(1.0)
 
     def skill_line(self, label, value):
         self.set_font("Helvetica", "B", 7.3)
         self.set_text_color(*self.BLACK)
         lw = self.get_string_width(label + " ")
-        self.cell(lw, 3.3, label + " ")
+        self.cell(lw, 3.2, label + " ")
         self.set_font("Helvetica", "", 7.3)
         self.set_text_color(*self.DARK)
-        self.multi_cell(0, 3.3, value, new_x="LMARGIN", new_y="NEXT", markdown=True)
+        self.multi_cell(0, 3.2, value, new_x="LMARGIN", new_y="NEXT", markdown=True)
 
     def job_header(self, company, role, dates):
         self.set_font("Helvetica", "B", 8.5)
         self.set_text_color(*self.BLACK)
-        self.cell(self.get_string_width(company + " "), 4.5, company + " ")
+        self.cell(self.get_string_width(company + " "), 4.0, company + " ")
         self.set_font("Helvetica", "", 7.5)
-        self.write(4.5, "-- ")
+        self.write(4.0, "-- ")
         self.set_font("Helvetica", "I", 7.5)
-        self.write(4.5, role)
+        self.write(4.0, role)
         self.set_font("Helvetica", "", 7.5)
-        self.write(4.5, "  - " + dates)
-        self.ln(4.5)
+        self.write(4.0, "  - " + dates)
+        self.ln(4.0)
 
     def sub_header(self, text):
         self.set_font("Helvetica", "I", 7)
         self.set_text_color(80, 80, 80)
-        self.cell(0, 3.5, text, new_x="LMARGIN", new_y="NEXT")
+        self.cell(0, 3.2, text, new_x="LMARGIN", new_y="NEXT")
 
     def bullet(self, text):
-        self.set_font("Helvetica", "", 6.8)
+        self.set_font("Helvetica", "", 6.6)
         self.set_text_color(*self.DARK)
         bullet_indent = 3.5
-        self.cell(bullet_indent, 3.0, "- ")
-        self.multi_cell(self.w - self.l_margin - self.r_margin - bullet_indent, 3.0, text, new_x="LMARGIN", new_y="NEXT", markdown=True)
+        self.cell(bullet_indent, 2.8, "- ")
+        self.multi_cell(self.w - self.l_margin - self.r_margin - bullet_indent, 2.8, text, new_x="LMARGIN", new_y="NEXT", markdown=True)
 
     def edu_header(self, title, institution, dates):
         self.set_font("Helvetica", "B", 8)
         self.set_text_color(*self.BLACK)
-        self.cell(self.get_string_width(title + " "), 4, title + " ")
+        self.cell(self.get_string_width(title + " "), 3.6, title + " ")
         self.set_font("Helvetica", "", 7.5)
-        self.write(4, "- " + institution + " - " + dates)
-        self.ln(4)
+        self.write(3.6, "- " + institution + " - " + dates)
+        self.ln(3.6)
 
 
 def build():
     pdf = ResumePDF()
     pdf.add_page()
-    pdf.set_margins(12, 8, 12)
-    pdf.set_y(8)
+    pdf.set_margins(12, 6, 12)
+    pdf.set_y(6)
 
     # -- Header --
     pdf.set_font("Helvetica", "B", 16)
@@ -105,30 +104,30 @@ def build():
         if i < len(links) - 1:
             pdf.set_text_color(*pdf.DARK)
             pdf.cell(pdf.get_string_width(" | "), 3.5, " | ")
-    pdf.ln(4.5)
+    pdf.ln(3.8)
 
     # -- Summary --
     pdf.section_title("SUMMARY")
     pdf.set_font("Helvetica", "", 7.3)
     pdf.set_text_color(*pdf.DARK)
-    pdf.multi_cell(0, 3.4, (
+    pdf.multi_cell(0, 3.2, (
         "**Full-Stack Developer** with **4 years** of experience building web products end-to-end (multi-tenant SaaS, internal platforms, AI services). "
         "Core expertise in **tenant isolation** (Supabase **RLS**/Policies), **POS/orders lifecycle**, **RBAC**, "
         "**AI engineering** (LLM orchestration with **LangChain/LangGraph**, offline **RAG**, face recognition embeddings, OCR/NLP/STT), **legacy DB migrations**, "
         "and **security-first architecture** (MFA, CSRF, HMAC/JWT). "
         "Daily stack: **Next.js**, **React**, **TypeScript**, Tailwind, **Supabase/PostgreSQL**, **NestJS**, Prisma, "
-        "**Python** (FastAPI, Pandas, **InsightFace**). Experienced with **Docker**, NGINX, **AWS**, Terraform, "
+        "**Python** (FastAPI, Pandas, **InsightFace**). Experienced with **Docker**, NGINX, **AWS**, **Azure** (Container Apps, ACR, MySQL Flexible Server), Terraform, "
         "**Redis/BullMQ**, **SendGrid**, Mercado Pago API."
     ), new_x="LMARGIN", new_y="NEXT", markdown=True)
     pdf.ln(0.8)
     # Core competencies keyword line (ATS-friendly flat list, wraps to left margin)
     pdf.set_font("Helvetica", "", 7.3)
     pdf.set_text_color(*pdf.DARK)
-    pdf.multi_cell(0, 3.4, (
+    pdf.multi_cell(0, 3.2, (
         "**Core Competencies:** Full-Stack Development | Software Engineering | AI Engineering | LangChain | LangGraph | LLM Orchestration | "
         "Offline RAG | LLM Evaluation | On-premise / Air-gapped AI | Vector Search | "
         "Face Recognition | OCR | Speech-to-Text | Multi-tenant SaaS | RBAC | Row-Level Security | REST APIs | "
-        "Microservices | CI/CD | Legacy DB Migration | ETL | Agile / Scrum | Code Review"
+        "Microservices | CI/CD | Cloud Deployment (Azure) | Legacy DB Migration | ETL | Agile / Scrum | Code Review"
     ), new_x="LMARGIN", new_y="NEXT", markdown=True)
     pdf.ln(0.5)
 
@@ -138,7 +137,7 @@ def build():
         ("Frontend:", "**Next.js**, **React**, **TypeScript**, **JavaScript (ES6+)**, **Tailwind CSS**, HTML5, CSS3, Zustand, **TanStack Query**, **Zod**, react-hook-form, @dnd-kit, ShadCN UI"),
         ("Backend:", "**NestJS**, **Node.js**, **Prisma**, **FastAPI** (Python), Express, GraphQL, **REST APIs / RESTful**, **OpenAPI / Swagger**, **Microservices**"),
         ("Databases:", "**PostgreSQL** (Supabase **RLS**, Triggers, RPC, Indexes), **MySQL**, **MariaDB**, MongoDB, SQL Server, **iBase** (legacy migration)"),
-        ("DevOps & Infra:", "**Docker**, **NGINX**, Debian/Linux, **AWS** (EC2, RDS, S3, CloudFront), **Terraform**, **CI/CD**, **GitHub Actions**, Vercel, Git/GitHub, PM2"),
+        ("DevOps & Infra:", "**Docker**, **NGINX**, Debian/Linux, **AWS** (EC2, RDS, S3, CloudFront), **Azure** (**Container Apps**, **Container Registry**, **MySQL Flexible Server**, Azure CLI), **Terraform**, **CI/CD**, **GitHub Actions**, Vercel, Git/GitHub, PM2"),
         ("AI & Data:", "**LangChain (LCEL)**, **LangGraph**, **Ollama / Qwen2.5**, local embeddings, **vector store on MariaDB**, structured output (JSON Schema), Pydantic guardrails, golden-set evals, **Gemini API**, **InsightFace** (**512-d face embeddings**), **Tesseract OCR**, **faster-whisper STT**, NLP, Pandas, NumPy, jsPDF, ExcelJS"),
         ("Integrations:", "**SendGrid** (transactional email), **Mercado Pago**, **Redis/BullMQ**, Webhooks (HMAC signed)"),
         ("Testing & Methods:", "**Unit Testing**, **Jest**, integration tests, **Agile / Scrum**, Kanban, Code Review, Git Flow"),
@@ -146,23 +145,10 @@ def build():
     ]
     for label, value in skills:
         pdf.skill_line(label, value)
-    pdf.ln(1.5)
+    pdf.ln(0.8)
 
     # -- Professional Experience --
     pdf.section_title("PROFESSIONAL EXPERIENCE")
-
-    # Niztech
-    pdf.job_header("Niztech", "AI & Automation Engineer (Full-Stack)", "Aug 2026 - Present")
-    niztech_bullets = [
-        "Automate **legacy back-office platforms built in 2010/2011** with **React + Express + SQLite** internal tools that cross results from independent systems, cutting manual **Data Entry** work.",
-        "Integrate platforms owned by third parties through **API keys, webhooks and queues** (create/read/update records and forms) where no native integration exists.",
-        "Built **Excel + PDF OCR pipelines** with **LLM APIs** for **overtime hours, budgets and invoices**, with structured validation and **human-in-the-loop** review before write-back.",
-        "Shipped an **Excel engine dashboard** that ingests spreadsheets into one platform where they are normalized, linked and queried together.",
-        "Ship every release through a **GitLab CI/CD pipeline** governed by a rigorous DevOps team (Medicus AI): **SonarQube quality gate**, Semgrep SAST, secret detection, Checkov IaC and container scanning gates, with automatic deploy to test and manual approval to prod.",
-    ]
-    for b in niztech_bullets:
-        pdf.bullet(b)
-    pdf.ln(0.8)
 
     # Ocean Stack
     pdf.job_header("Ocean Stack", "Full-Stack Developer / Software Engineer (Multi-tenant SaaS)", "Dec 2025 - Jun 2026")
@@ -186,7 +172,7 @@ def build():
     ]
     for b in ocean_bullets:
         pdf.bullet(b)
-    pdf.ln(0.8)
+    pdf.ln(0.5)
 
     # Argentine Federal Penitentiary Service
     pdf.job_header("Argentine Federal Penitentiary Service",
@@ -195,12 +181,16 @@ def build():
     pdf.ln(0.5)
 
     afps_bullets = [
-        "Shipped an **on-prem NL intelligence chatbot** over a **90+ table legacy database**: **SQL-RAG** (deterministic parameterized retrieval, **zero hallucinated facts**, zero data egress) + **grounded 100% local LLM** (**Ollama/Qwen2.5**, CPU-only, air-gapped) orchestrated with **LangChain LCEL** - **structured output** (JSON Schema), **token streaming**, inline **[n] citations**, feature-flagged rollout; cut a >45s legacy self-join to **sub-second** (Next.js, NestJS, Python/FastAPI, Prisma, MariaDB).",
-        "Built a **LangGraph** orchestration layer with **semantic validation**, **feedback-driven retries** (best-attempt strategy) and a **map-reduce pipeline with parallel fan-out** per entity; backed by a **labeled golden set** and **A/B/C evaluation** across LLM backends to pick the production default from measured data.",
-        "Built a production **Python Face Matcher service**: **InsightFace buffalo_l** (ONNX CPU) **512-d embeddings**, in-memory NumPy **cosine top-K** index, **per-UID centroid** enrollment, persisted as BLOBs in MariaDB (**FastAPI**).",
-        "Built an **AI-assisted document intelligence pipeline**: **Tesseract OCR** (spa+eng, binarization), **hybrid PDF extraction** (PyPDF2 + pdf2image/Poppler 300 DPI fallback, NDJSON streaming), and **faster-whisper ASR** (INT8 CPU), all with **human-in-the-loop review**.",
-        "Migrated **~110 GB of legacy iBase8 data** to **MySQL/MariaDB** across **80+ modules** (relational + PDFs, scans, ZIPs, Word): normalized schema, **ETL** with chunked resumable streaming, checksum integrity, integrated into the new **NestJS + Next.js** stack.",
-        "Automated **PDF/Excel/Word reporting** and **secure document verification** (**HMAC-SHA256**, **JWT**, time-limited access, watermarking); implemented **MFA/CSRF/rate limiting**, **Redis/BullMQ** queues and **containerized infra** for **170 concurrent users** (Docker, NGINX, PM2, Debian).",
+        "Shipped an **on-prem NL intelligence chatbot** over a **90+ table legacy database**: **SQL-RAG** (deterministic parameterized retrieval, **zero hallucinated facts**, zero data egress) + **grounded 100% local LLM** (**Ollama/Qwen2.5**, **CPU-only**, air-gapped), orchestrated with **LangChain LCEL** - **structured output** via server-side JSON Schema, **token streaming**, custom observability callbacks, **byte-for-byte verified parity**, feature-flagged rollout with **zero-downtime rollback**; inline **[n] citations** to source records; cut a >45s legacy self-join to **sub-second** via indexed single-entity queries + app-side intersection (Next.js, NestJS, Python/FastAPI, Prisma, MariaDB).",
+        "Built a **LangGraph** orchestration layer with **semantic validation** and **feedback-driven retries** (**best-attempt strategy** - a retry never regresses below the prior result) plus a **map-reduce pipeline with parallel fan-out** per entity to beat small local models' context-window limits; backed by a **labeled golden set** and **A/B/C evaluation** across LLM backends, choosing the production default **from measured data**.",
+        "Led delivery of a **two-platform ecosystem** (internal ops + public verification portal) with **secure data flows** and controlled access for multiple stakeholders (React, Next.js, TypeScript, Tailwind, NestJS, Prisma).",
+        "Built **Python Face Matcher service** in production: **InsightFace buffalo_l** (ONNX CPU) **512-d L2-normalized embeddings**, in-memory (N, 512) float32 index with **NumPy cosine brute-force + argpartition top-K**, **per-UID centroid** (mean + renormalize) for multi-photo enrollment, persisted as **BLOBs in MariaDB**. Endpoints /face/embed, /face/search, /face/search-multi (**FastAPI**).",
+        "Built an **AI-assisted document intelligence pipeline**: **OCR** (**Tesseract LSTM** spa+eng with grayscale + binarization threshold 140), **hybrid PDF extraction** (PyPDF2 for native text, **pdf2image + Poppler @ 300 DPI** fallback with per-page OCR, **NDJSON streaming progress**), and **ASR** (**faster-whisper small INT8 CPU** normalizing WhatsApp .opus via ffmpeg), all with **human-in-the-loop review**.",
+        "Migrated **~110 GB of legacy iBase8 data** to **MySQL/MariaDB** across **80+ modules**: relational tables plus heterogeneous binary content (**PDFs**, **scanned images**, **ZIP archives**, **Word documents**). Designed **normalized relational schema**, built **ETL pipelines** with chunked streaming and resumable runs, **classified and stored binary assets** with checksum integrity, validated data integrity end-to-end, and integrated migrated entities into the new **NestJS + Next.js** stack.",
+        "Automated **operational reporting** (**PDF/Excel/Word**) and engineered **secure document verification** (**time-limited access**, **cryptographic validation**, **HMAC-SHA256**, **JWT**, watermarking) replacing manual workflows (TypeScript, Pandas).",
+        "Implemented **end-to-end security** (**MFA**, **CSRF**, rate limiting, **Helmet/CORS**) and **Redis/BullMQ** async job queues with in-memory fallback caching, on **containerized infrastructure** for **170 concurrent users** (**Docker**, **NGINX**, **PM2**, Debian) with automated backups.",
+        "Deployed a **people-transfer management platform** to production on **Azure** (private VPN to the on-prem **Debian** infrastructure was unavailable): **containerized backend + frontend on Azure Container Apps**, images in **Azure Container Registry**, **zero-downtime releases via revisions**, **Azure Database for MySQL Flexible Server** (firewall rules, **enforced SSL/TLS**, production parameter tuning), and sensitive config via **Container Apps secrets** - **no hardcoded credentials**.",
+        "Configured **networking/ingress** for that platform (HTTPS exposure, internal backend-database traffic, **TLS termination**) and debugged infrastructure incidents via **Azure CLI + REST API** (revision inspection, container logs, **health probes**); **end-to-end ownership** of deployment architecture, rollout, and live operation with real users.",
     ]
     for b in afps_bullets:
         pdf.bullet(b)
@@ -218,13 +208,13 @@ def build():
     virtua_url = "https://www.virtuastate.net/"
     pdf.cell(pdf.get_string_width(virtua_url), 3.4, virtua_url, link=virtua_url)
     pdf.ln(3.4)
-    pdf.ln(1.5)
+    pdf.ln(0.8)
 
     # -- Education --
     pdf.section_title("EDUCATION")
     pdf.edu_header("Higher Degree in Programming", "Teclab", "Aug 2022 - Aug 2024")
     pdf.bullet("Software fundamentals and delivery practices: databases, web development, UX, cloud basics, project management.")
-    pdf.ln(0.5)
+    pdf.ln(0.2)
     pdf.edu_header("Full-Stack Web Development", "CoderHouse", "Jan 2022 - Mar 2023")
     pdf.bullet("Delivered multiple end-to-end projects: frontend and backend foundations, web app architecture (HTML5, EJS, CSS/SASS, React, Node.js, MongoDB, Express, GraphQL).")
     pdf.set_font("Helvetica", "", 7.3)
@@ -237,7 +227,7 @@ def build():
     pdf.cell(pdf.get_string_width(coder_url), 3.4, coder_url, link=coder_url)
     pdf.ln(3.4)
 
-    pdf.output("Jonathan-Sanso-Full-Stack-AI-Engineer2.pdf")
+    pdf.output("Jonathan-Sanso-Full-Stack-AI-Engineer2-Azure.pdf")
     print(f"PDF generated! Pages: {pdf.pages_count}, final Y: {pdf.get_y():.1f} / {pdf.h:.1f}")
 
 if __name__ == "__main__":

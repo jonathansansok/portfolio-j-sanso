@@ -80,7 +80,7 @@ Live: d2hiu34pyeqif1.cloudfront.net
 ingles servicio penit federal: 
 I lead architecture, development, security and deployment of nationwide institutional platforms for the SPF, full ownership of the stack: frontend, backend, AI services, Dockerized infra (Debian + NGINX + PM2, 170 concurrent users). Replacing manual processes with secure, AI-assisted solutions.
 
-🔹 Institutional Platform Sige2i (Private – VPN)
+🔹 Institutional Platform (Private – VPN)
 
 End-to-end modernization replacing Excel workflows and legacy iBase8 systems (Next.js, NestJS, Prisma, MySQL/MariaDB).
 

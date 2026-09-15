@@ -44,7 +44,7 @@ color-coded score cards, per-criteria progress bars, and automated candidate cre
 - Implemented SendGrid transactional email pipeline triggered by candidate pipeline phase changes (automated and semi-automated flows with recruiter
 approval step): templated emails per stage, Supabase triggers + queued dispatch, idempotency keys, and delivery audit log per tenant.
 Argentine Federal Penitentiary Service -- Full-Stack Developer / AI Engineer - Jan 2024 - Present
-Private repos -- Sige2i internal platform (NestJS + Next.js + Python/FastAPI)
+Private repos -- Internal platform (NestJS + Next.js + Python/FastAPI)
 - Shipped an on-prem NL intelligence chatbot over a 90+ table legacy database: SQL-RAG (deterministic parameterized retrieval, zero hallucinated facts, zero data
 egress) + grounded 100% local LLM (Ollama/Qwen2.5, CPU-only, air-gapped), orchestrated with LangChain LCEL - structured output via server-side JSON Schema,
 token streaming, custom observability callbacks, byte-for-byte verified parity, feature-flagged rollout with zero-downtime rollback; inline [n] citations to source
@@ -79,8 +79,8 @@ GraphQL).
 Live: https://react-e-commerce-j-sanso.vercel.app/
 
 
-
-saludo final:
+no te olvides de poner a virtuaste en proyectos en produccion
+saludo final sin espacios entre medio de salto de linea y con Jonathan Sansó en negrita:
 Jonathan Sansó 12
 Full-Stack Developer / AI Engineer 11
 +54 9 11 6912-3268 11

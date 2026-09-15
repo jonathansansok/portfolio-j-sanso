@@ -2,7 +2,7 @@ I lead the architecture, development, security and deployment of nationwide inst
 
 
 
-🔹 Institutional Platform Sige2i (Private – VPN)
+🔹 Institutional Platform (Private – VPN)
 
 End-to-end modernization replacing Excel workflows and legacy iBase8 systems (Next.js, NestJS, Prisma, MySQL/MariaDB).
 
